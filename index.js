@@ -789,27 +789,23 @@ client.on(`userUpdate`, (oldUser, newUser) => {
   
   })
 
-client.on("userUpdate", async (oldUser, newUser) => {
-  if (oldUser.username !== newUser.username) {
-  const tag = 'TAGINIZ'
-  const sunucu = 'SUNUCU ID'
-  const kanal = 'KANAL ID'
-  const rol = 'ROL ID'
-
-  try {
-
-  if (newUser.username.includes(tag) && !client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.cache.has(rol)) {
-  await client.channels.cache.get(kanal).send(new Discord.MessageEmbed().setColor("GREEN").setDescription(`${newUser} ${tag} Tagımızı Aldığı İçin <@&${rol}> Rolünü Verdim`));
-  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.add(rol);
-  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).send(`Selam ${newUser.username}, Sunucumuzda ${tag} Tagımızı Aldığın İçin ${client.guilds.cache.get(sunucu).roles.cache.get(rol).name} Rolünü Sana Verdim!`)
-  }
-  if (!newUser.username.includes(tag) && client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.cache.has(rol)) {
-  await client.channels.cache.get(kanal).send(new Discord.MessageEmbed().setColor("RED").setDescription(`${newUser} ${tag} Tagımızı Çıkardığı İçin <@&${rol}> Rolünü Aldım`));
-  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).roles.remove(rol);
-  await client.guilds.cache.get(sunucu).members.cache.get(newUser.id).send(`Selam **${newUser.username}**, Sunucumuzda ${tag} Tagımızı Çıkardığın İçin ${client.guilds.cache.get(sunucu).roles.cache.get(rol).name} Rolünü Senden Aldım!`)
-  }
-} catch (e) {
-console.log(`Bir hata oluştu! ${e}`)
- }
-}
+const captain = new Discord.ShardingManager('./index.js', {
+    totalShards: 1,
+    token: (ayarlar.token)
 });
+
+captain.spawn();
+
+captain.on('launch', shard => {
+  console.log(`${shard.id +1} IDli Başlatıldı ve Kullanıma Hazır.`)
+    const webhook = new Discord.WebhookClient("743696829543350383","i3RJwpSOCm-4p8mNgZfy4Cp0J5WeXIpidwGrAC0f8ikk3YTwtI4aLdAc44RudcjYsWbH")
+    webhook.send(`<a:740189806361051158:743695925314322563> [Başlatılıyor] - <@743696829543350383> \n${shard.id +1} IDli Başlatılıyor Lütfen Bekleyin.`)
+    setTimeout(() => {
+  const webhook = new Discord.WebhookClient("743696829543350383","i3RJwpSOCm-4p8mNgZfy4Cp0J5WeXIpidwGrAC0f8ikk3YTwtI4aLdAc44RudcjYsWbH")
+  webhook.send(`<a:740189806658584647:743695924890697759> [Başlatıldı] - <@743696829543350383> \n${shard.id +1} IDli Başlatıldı ve Kullanıma Hazır.`)
+  }, 3000)
+});
+
+setTimeout(() => {
+    captain.broadcastEval("process.exit()");
+}, 8600000);
