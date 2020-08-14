@@ -16,7 +16,7 @@ return;
 
       }  
 
-let kanal = ''
+let kanal = '742043005870932069'
 
     const davetlinki = await client.channels.cache.get(message.channel.id).createInvite({ maxAge: 0})
 
@@ -34,7 +34,7 @@ message.channel.send(embed)
 .addField(`Sunucunun Sahibi;`, `${message.guild.owner} (${message.guild.owner.id})`)
 .addField(`Sunucunun Davet Linki;`, `${davetlinki.url}`)
 .setThumbnail(`${client.user.avatarURL()}`)
-client.channels.cache.get(kanal).send(sunucutanıtıldı)
+client.channels.cache.get(sunucutanıtıldı).send(kanal)
 
         db.set(`sunucutanıt_${message.guild.id}`, Date.now())
 
