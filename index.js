@@ -736,3 +736,15 @@ client.on('guildMemberAdd', async member => {
 });
 //_________________________________________________________________________________________________________________________________//
 
+
+client.on('guildMemberUpdate', async (eski, yeni) => {
+let gifkanal = `741854835741294694` // GIF olan pp'lerin gideceği kanalın ID'sini belirtin.
+let pngkanal = `741854835741294694` // GIF olmayan pp'lerin gideceği kanalın ID'sini belirtin.
+if(!yeni.avatarURL() || eski.avatarURL() == yeni.avatarURL()) return;
+let pp = yeni.avatarURL({ format: 'png', dynamic: true })
+if(pp.endsWith('.gif')) {
+client.channels.cache.get(gifkanal).send(new Discord.MessageAttachment(pp))
+} else {
+client.channels.cache.get(pngkanal).send(new Discord.MessageAttachment(pp))
+}
+})
