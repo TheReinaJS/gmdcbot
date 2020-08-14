@@ -755,3 +755,4 @@ client.on("message",message => {
     if(!udurum) return;
      message.delete({timeout : 5000 })
 })
+

@@ -11,7 +11,8 @@ exports.run = async (client, message, args) => {
     sayi = sayi-100;
   };
   if (sayi > 0)  message.channel.bulkDelete(sayi).then(r => silinen+=r.size);
-  message.channel.send(`**\`\`${args[0]}\`\` Adet Mesaj Silindi.**`)
+  message.channel.send(`**\`\`${args[0]}\`\` Adet Mesaj Silindi.**`).
+  .then(a=>a.delete({timeout:10000}))
 }
 
 exports.conf = {
