@@ -1,50 +1,33 @@
-const discord = require('discord.js')
+const Discord = require('discord.js');
 const db = require('quick.db')
-const ms = require('parse-ms')
 
-let cooldown = 8.64e+7 
-exports.run = async(client, message, args) => {
-
-      if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu Komudu Kullanabilmek İçin `Yönetici` Yetkisine Sahip Olmalısın!')
-  let zaman = await db.fetch(`sunucutanıt_${message.guild.id}`)
-      
-      if (zaman !== null && cooldown - (Date.now() - zaman) > 0) {
-        let süre = ms(cooldown - (Date.now() - zaman))
-      message.channel.send(`Sunucunu **${süre.hours}** Saat **${süre.minutes}** Dakika Sonra Tanıtabilirsin!`)
-return;
-      } else { 
-
-      }  
-
-let kanal = '743673641765437500'
-
-    const davetlinki = await client.channels.cache.get(message.channel.id).createInvite({ maxAge: 0})
-
-const embed = new discord.MessageEmbed()
-.setColor('RANDOM')
-.setDescription('Merhaba İlk Önce Botumuzu Kullandığımız için Teşekkür Ederiz. \n\n Sunucunuz [Destek](https://discord.gg/YqdbJDR) Sunucumuzda Paylaşıldı!')
-message.channel.send(embed)
-  const sunucutanıtıldı = new discord.MessageEmbed()
-.setAuthor(client.user.username, client.user.avatarURL())
-.setTitle(`Yeni Bir Sunucu Tanıtıldı!`)
-.setColor('RANDOM')
-.addField(`Sunucunun İsmi;`, `**${message.guild.name}**`)
-.addField(`Sunucudaki Kullanıcı Sayısı;`, `**${message.guild.memberCount}**`)
-.addField(`Sunucuyu Tanıtan Kullanıcı;`, `${message.author} (${message.author.id})`)
-.addField(`Sunucunun Sahibi;`, `${message.guild.owner} (${message.guild.owner.id})`)
-.addField(`Sunucunun Davet Linki;`, `${davetlinki.url}`)
-.setThumbnail(`${client.user.avatarURL()}`)
-client.channels.cache.get(kanal).send(sunucutanıtıldı)
-
-        db.set(`sunucutanıt_${message.guild.id}`, Date.now())
-
+exports.run = async (client, message, args) => {
+  var bot = "743344922173898852"
+   if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('Bu komutu kullanabilmek için `Yönetici` yetkisine sahip olmalısın!')
+   let rol = message.mentions.roles.first() || message.guild.roles.get(args[0]) || message.guild.roles.find(rol => rol.name === args[0]);
+  if (!rol) return message.channel.send('Herkese rol verebilmem için bir rol etiketlemelisin.')
+  
+  
+   const embed = new Discord.RichEmbed()
+     .setDescription(`Herkese ${rol} adlı rol verildi!`)
+        .setColor(rol.hexColor)
+   
+   message.guild.members.forEach(u => {
+u.addRole(rol)
+})
+  message.channel.send('Herkese **'+ rol.name +'** adlı rol verildi!')
+  message.channel.send(embed)
 }
 exports.conf = {
-  name: true,
-  guildonly: false,
-  aliases: [],
-  permlevel: 0
+    enabled: true,
+    guildOnly: false,
+    aliases: ['herkese-rol-ver'],
+    permLevel: 4,
+  kategori: 'moderasyon'
 }
+
 exports.help = {
-  name: 'sunucutanıt'
+    name: 'herkese-rol-ver',
+    description: 'Sunucudaki kullanıcılara toplu olarak rol verir.',
+    usage: 'toplu-rol-ver <@rol>'
 }
