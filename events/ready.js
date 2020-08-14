@@ -11,5 +11,5 @@ const log = message => {
 
 module.exports = async client => {
     client.user.setPresence({activity:{name:`z!js`},status: 'online'})
-    log(chalk.green(`[ BOT ] ${client.user.username} HAZIR `))
+    log(chalk.green(`[ BOT ] KOMUTLAR YÜKLENDI KULLANIMA HAZIR `))
   }

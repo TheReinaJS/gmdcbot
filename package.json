@@ -1,7 +1,7 @@
 {
   "name": "hello-express",
   "version": "0.0.1",
-  "description": "Venosa Helper Alt Yapı",
+  "description": "KINSTA V12 ALT YAPI",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
