@@ -720,7 +720,6 @@ if (message.content === 'z!fakekatıl') {
 });
 //_________________________________________________________________________________________________________________________________//
 
-
 //_________________________________________________________________________________________________________________________________//
 client.on('guildMemberAdd', async member => {
   let kanal1 = await db.fetch(`otorolkanal_${member.guild.id}`);
@@ -737,32 +736,3 @@ client.on('guildMemberAdd', async member => {
 });
 //_________________________________________________________________________________________________________________________________//
 
-
-
-client.on(`userUpdate`, (oldUser, newUser) => {
-
-    let kişi = client.users.cache.get(oldUser.id)
-    let avatar = kişi.avatarURL.split('?')[0]
-    let kanal = client.channels.find(ch => ch.id === '741854835741294694')/// Gifsiz Avatar Kanal İd
-    let kanal1 = client.channels.find(ch => ch.id === '741854835741294694')/// Gifli Avatar Kanal İd
-  
-  if(avatar.endsWith('.png')) {
-    const emb = new Discord.MessageEmbed()
-    .setImage(avatar)
-    .setFooter(`${kişi.tag}`)
-    .setTimestamp()
-    .setDescription(`Fotoğrafa gitmek için [tıkla](${kişi.avatarURL})!`)
-    kanal.send(emb)
-  }
-
-  if(avatar.endsWith('.gif')) {  
-    const emb = new Discord.MessageEmbed()
-    .setImage(avatar)
-    .setFooter(`${kişi.tag}`)
-    .setTimestamp()
-    .setDescription(`Fotoğrafa gitmek için [tıkla](${kişi.avatarURL})!`)
-    kanal1.send(emb)
-  
-  }
-  
-  })
