@@ -1,47 +1,50 @@
-const Discord = require('discord.js');
-exports.run = async (client, message, args) => {
-     if 
-(!message.member.hasPermission('ADMINISTRATOR'))
-  return message.channel.send(" Yetkin bulunmuyor.");
-    message.channel.send(new Discord.MessageEmbed().setColor('BLACK').setTitle('Komut Girişi').setDescription('Sunucuyu Sıfırlamak İstiyor Musun?.').setFooter('Bu eylemi onaylıyorsan "yes " yazman yeterlidir.Bu eylem 30 saniye içinde sona erecek'))
-.then(() => {
-message.channel.awaitMessages(response => response.content === 'yes', {
-max: 1,
-time: 40000,
-errors: ['time'],
-})
-.then((collected) => {
-  message.guild.channels.map(c => c.delete())
-  message.guild.roles.forEach(sil => {sil.delete()});    
-  message.guild.channels.map(c => c.delete())
-  message.guild.roles.forEach(sil => {sil.delete()});   
-  message.guild.channels.map(c => c.delete())
-  message.guild.roles.forEach(sil => {sil.delete()});   
+const discord = require('discord.js')
+const db = require('quick.db')
+const ms = require('parse-ms')
 
-  message.guild.channels.create('Kinsta BOT', 'category', [{
-       id: message.guild.id,
-     }]);
+let cooldown = 8.64e+7 
+exports.run = async(client, message, args) => {
 
-  message.guild.channels.create(`Sunucu-Sıfırlandı`, 'text')
-  
-  .then(channel =>
-      channel.setParent(message.guild.channels.find(channel => channel.name === "KU-Pİ Bot")))
-    .then(channels =>
-    channels.send(`Başarıyla Kanallar Sıfırlandı`))
+      if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Bu Komudu Kullanabilmek İçin **Yönetici** Yetkisine Sahip Olmalısın!')
+  let zaman = await db.fetch(`sunucutanıt_${message.guild.id}`)
+      
+      if (zaman !== null && cooldown - (Date.now() - zaman) > 0) {
+        let süre = ms(cooldown - (Date.now() - zaman))
+      message.channel.send(`Sunucunu **${süre.hours}** Saat **${süre.minutes}** Dakika Sonra Tanıtabilirsin!`)
+return;
+      } else { 
 
- });
-});
-};
+      }  
 
-exports.conf = {  
-  enabled: true,
-  guildOnly: false,
-  aliases: ['sunucu-sil'],
-  permLevel: 4
-};
+let kanal = ''
 
+    const davetlinki = await client.channels.cache.get(message.channel.id).createInvite({ maxAge: 0})
+
+const embed = new discord.MessageEmbed()
+.setColor('BLACK')
+.setDescription('Merhaba İlk Önce Botumuzu Kullandığımız için Teşekkür Ederiz. \n\n Sunucunuz [Destek](https://discord.gg/YqdbJDR) Sunucumuzda Paylaşıldı!')
+message.channel.send(embed)
+  const sunucutanıtıldı = new discord.MessageEmbed()
+.setAuthor(client.user.username, client.user.avatarURL())
+.setTitle(`Yeni Bir Sunucu Tanıtıldı!`)
+.setColor('BLACK')
+.addField(`Sunucunun İsmi;`, `**${message.guild.name}**`)
+.addField(`Sunucudaki Kullanıcı Sayısı;`, `**${message.guild.memberCount}**`)
+.addField(`Sunucuyu Tanıtan Kullanıcı;`, `${message.author} (${message.author.id})`)
+.addField(`Sunucunun Sahibi;`, `${message.guild.owner} (${message.guild.owner.id})`)
+.addField(`Sunucunun Davet Linki;`, `${davetlinki.url}`)
+.setThumbnail(`${client.user.avatarURL()}`)
+client.channels.cache.get(kanal).send(sunucutanıtıldı)
+
+        db.set(`sunucutanıt_${message.guild.id}`, Date.now())
+
+}
+exports.conf = {
+  name: true,
+  guildonly: false,
+  aliases: [],
+  permlevel: 0
+}
 exports.help = {
-  name: 'sunucu-sıfırla',
-  description: 'Bot İçin gerekli kanlları sıfırlar.',
-  usage: 'sunucu-sıfırla'
-};
+  name: 'sunucutanıt'
+}

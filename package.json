@@ -29,7 +29,9 @@
     "snekfetch": "^4.0.4",
     "steam-provider": "^0.2.0",
     "superagent": "^6.0.0",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+    "ffmpeg": "^0.0.4",
+    "ytdl-core": "^3.2.1"
   },
   "engines": {
     "node": "12.x"
