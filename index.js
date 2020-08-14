@@ -93,7 +93,7 @@ client.elevation = message => {
     if (message.author.id === ayarlar.sahip) permlvl = 4;
     return permlvl;
 };
-client.login(ayarlar.token)
+client.login(process.env.TOKEN)
 
 //_________________________________________________________________________________________________________________________________//
 client.on("message", async (msg, member, guild) => {
