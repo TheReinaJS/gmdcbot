@@ -753,5 +753,5 @@ client.on("message",message => {
   if(!message.author.bot) return;
   let udurum = db.fetch(`usohbet.${message.channel.id}`)
     if(!udurum) return;
-     message.delete(3000)
+     message.delete({timeout : 5000 })
 })
