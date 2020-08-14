@@ -4,7 +4,7 @@ exports.run = function(client, message) {
   var role = message.guild.roles.cache.find(role => role.id === "741847275818582116"); 
   if (message.member.roles.cache.has(role.id)) return message.channel.send("Zaten bu role sahipsin!")
   message.member.roles.add(role.id);
-  message.channel.send(`Rol verildi!`);
+  message.channel.send(`<a:tik5:743602854245171311> Rol verildi!`);
 };
 
 exports.conf = {
