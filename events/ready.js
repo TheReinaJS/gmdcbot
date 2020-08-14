@@ -3,7 +3,7 @@ const moment = require('moment')
 const kanal = '742043139430285454'
 const log = message => {
   
-    console.log(`🌃 ${chalk.magenta(moment().format('YYYY-MM h:mm:ss'))}  😈 ${message}`)
+    console.log(`${chalk.magenta(moment().format('YYYY-MM h:mm:ss'))} ${message}`)
 }
 
 

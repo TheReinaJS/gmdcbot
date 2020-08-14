@@ -788,24 +788,3 @@ client.on(`userUpdate`, (oldUser, newUser) => {
   }
   
   })
-
-const captain = new Discord.ShardingManager('./index.js', {
-    totalShards: 1,
-    token: (ayarlar.token)
-});
-
-captain.spawn();
-
-captain.on('launch', shard => {
-  console.log(`${shard.id +1} IDli Başlatıldı ve Kullanıma Hazır.`)
-    const webhook = new Discord.WebhookClient("743696829543350383","i3RJwpSOCm-4p8mNgZfy4Cp0J5WeXIpidwGrAC0f8ikk3YTwtI4aLdAc44RudcjYsWbH")
-    webhook.send(`<a:740189806361051158:743695925314322563> [Başlatılıyor] - <@743696829543350383> \n${shard.id +1} IDli Başlatılıyor Lütfen Bekleyin.`)
-    setTimeout(() => {
-  const webhook = new Discord.WebhookClient("743696829543350383","i3RJwpSOCm-4p8mNgZfy4Cp0J5WeXIpidwGrAC0f8ikk3YTwtI4aLdAc44RudcjYsWbH")
-  webhook.send(`<a:740189806658584647:743695924890697759> [Başlatıldı] - <@743696829543350383> \n${shard.id +1} IDli Başlatıldı ve Kullanıma Hazır.`)
-  }, 3000)
-});
-
-setTimeout(() => {
-    captain.broadcastEval("process.exit()");
-}, 8600000);

@@ -1,5 +1,5 @@
 const req = event => require(`../events/${event}`)
-
+require('events').EventEmitter.defaultMaxListeners = 15;
 
 
 
