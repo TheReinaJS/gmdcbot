@@ -1,35 +1,27 @@
-  let Discord = require('discord.js');
+const discord = require('discord.js')
 
-exports.run = async (client, message, args) => {
+exports.run = async(client, message, args) => {
 
-let user = message.mentions.users.first() || args.slice(1).join(' ');  
-let member = message.mentions.users.first()
-let isim = args.slice(1).join(" ")
-let yas = args.slice(2).join(" ") 
-if (!member) return message.channel.send('**Bir üye etiketlemelisin**')
-if (!isim) return message.channel.send('Bir isim yazmalısın ')
-if (!yas) return message.channel.send("Bir Yaş Girmelisin"); 
-member.setNickName(`${isim} | ${yas}`)
-let embed = new Discord.RichEmbed()
-.setTimestamp()
-.addField(
-      `**• Kullanıcının takma adı değiştirildi.**`,
-      `\n \n**Değiştirilen Kullanıcı :** ${member.user} \n **Düzenlenmiş Kullanıcı Adı :** \` ${isim}`
-    )
-.setFooter(`${message.author.tag}` , `${message.author.avatarURL}`)
-.setColor('#6600FF')
-message.react('<a:tik1:724735045448892466>')
-message.channel.send(embed)
-};
+if (!message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send(`Bu komutu kullanabilmek için **Kullanıcı Adlarını Yönet** yetkisine sahip olmalısın.`);
+  
+let kinsta = message.mentions.members.first()
+if (!kinsta) return message.channel.send(`Bir kullanıcı etiketlemelisin.`)
+
+let isim = args.slice(1).join(' ')
+if (!kinsta) return message.channel.send(`Değiştirilicek ismi girin.`)
+
+kinsta.setNickname(isim)
+message.channel.send(`${kinsta} Adlı Kullanıcının Yeni İsmi **${isim}\** Olarak Ayarlandı!`)
+}
 
 exports.conf = {
-enabled: true,
-guildOnly: true,
-aliases: ['isim'],
-permLevel: 0
+  name: true,
+  guildonly: false,
+  aliases: ['isim', 'i-değiştir', 'isimdeğiştir', 'değiştir-isim'],
+  permlevel: 0
 }
 exports.help = {
-name: 'isim',
-description: "İsim değiştirmeye ne dersin yakışıklı",
-usage: 'isim <yeni isim>'
+  name: 'isim-değiştir',
+  usage: 'Kinsta Code & Only V12',
+  description: 'Kinsta Code & Only V12'
 }
