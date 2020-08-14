@@ -560,7 +560,7 @@ client.on("message", async message => {
           .setFooter(`${client.user.username}`, client.user.avatarURL);
         message.channel
           .send(reklambanuyari)
-          .then(message => message.delete(10000));
+          .then(a=>a.delete({timeout:10000}))
         if (kişiuyari == sınır) {
           message.delete();
           kullanici.ban({
@@ -593,7 +593,7 @@ client.on("message", msg => {
           try {
             if (!msg.member.hasPermission("BAN_MEMBERS")) {
                   msg.delete();
-                    return msg.reply('Bu sunucuda reklam yapamazsın.')
+                    return msg.reply('Bu sunucuda reklam yapamazsın.').then(a=>a.delete({timeout:10000}))
    
  
   msg.delete(3000);                              
@@ -617,7 +617,7 @@ client.on("message", async msg => {
              if (!msg.member.hasPermission("ADMINISTRATOR")) {
                if (!msg.mentions.users.first()) {
                  msg.delete()
-                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf ile yazamazsın.`)
+                 return msg.channel.send(`${msg.author}, Bu sunucuda, büyük harf ile yazamazsın.`).then(a=>a.delete({timeout:10000}))
      }
        }
      }
@@ -681,7 +681,7 @@ client.on("message", async msg => {
             if (!msg.member.hasPermission("BAN_MEMBERS")) {
                   msg.delete();
                           
-                      return msg.reply('Bu sunucuda küfür edemezsin.')
+                      return msg.reply('Bu sunucuda küfür edemezsin.').then(a=>a.delete({timeout:10000}))
             }              
           } catch(err) {
             console.log(err);
@@ -703,7 +703,7 @@ client.on("messageUpdate", msg => {
             if (!msg.member.hasPermission("BAN_MEMBERS")) {
                   msg.delete();
                           
-                      return msg.reply('Bu sunucuda küfür edemezsin.')
+                      return msg.reply('Bu sunucuda küfür edemezsin.').then(a=>a.delete({timeout:10000}))
             }              
           } catch(err) {
             console.log(err);
