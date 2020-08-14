@@ -530,7 +530,7 @@ client.on("message", async message => {
 
 //_________________________________________________________________________________________________________________________________//
 client.on("message", async message => {
-  let kişiuyari = await db.fetch(  `uyarisayisi_${message.author.id}${message.guild.id}`);
+  let kişiuyari = await db.fetch(`uyarisayisi_${message.author.id}${message.guild.id}`);
   let sınır = await db.fetch(`reklamsınır_${message.guild.id}`);
   let reklambanayar = await db.fetch(`reklambanayar_${message.guild.id}`);
   let kullanici = message.member;
