@@ -95,6 +95,7 @@ client.elevation = message => {
 };
 client.login(ayarlar.token)
 
+//_________________________________________________________________________________________________________________________________//
 client.on("message", async (msg, member, guild) => {
     let i = await db.fetch(`saas_${msg.guild.id}`);
     if (i === "açık") {
@@ -103,7 +104,9 @@ client.on("message", async (msg, member, guild) => {
       }
     }
   });
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 const ms = require("parse-ms");
 const { DiscordAPIError } = require("discord.js");
 client.on("message", async message => {
@@ -134,7 +137,9 @@ client.on("message", async message => {
     message.channel.send(afk)
   }
 });
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on("message", async message => {
   let ever = await db.fetch(`ever_${message.guild.id}`);
   let sayı = await db.fetch(`sayi_${message.author.id}`);
@@ -181,7 +186,10 @@ client.on("message", async message => {
     return;
   }
 });
+//_________________________________________________________________________________________________________________________________//
 
+
+//_________________________________________________________________________________________________________________________________//
 client.on("message", async msg => {
   
 let hereengelle = await db.fetch(`hereengel_${msg.guild.id}`)
@@ -203,7 +211,10 @@ let hereengelle = await db.fetch(`hereengel_${msg.guild.id}`)
  
 }
 });
+//_________________________________________________________________________________________________________________________________//
 
+
+//_________________________________________________________________________________________________________________________________//
 client.on('channelUpdate', async channel => {
   const guild = channel.guild;
   const logKanalID = await db.fetch(`logKanal_${guild.id}`)
@@ -378,7 +389,6 @@ client.on('roleDelete', async role => {
     logKanal.send(embed)
    })
 })
-
 client.on('messageUpdate', async (oldMessage,newMessage) =>{
   if(!oldMessage.guild && !newMessage.guild) return
   if( newMessage == '') return
@@ -417,7 +427,9 @@ client.on('messageDelete', async message => {
     logKanal.send(embed)
     
 })
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on('guildMemberAdd', async (member, guild, message) => {
 
     let ototag = await db.fetch(`ototag_${member.guild.id}`);
@@ -438,8 +450,9 @@ client.on('guildMemberAdd', async (member, guild, message) => {
     }
     
   });
+//_________________________________________________________________________________________________________________________________//
 
-
+//_________________________________________________________________________________________________________________________________//
 client.on('guildMemberAdd', async member => {
   const reklamisim = ["discord.gg/", "https://discord.gg", "invite", "join", "twitch", "instagram", "facebook", "dlive", "nolive", "discordbots.org", "discordapp", "j4j", "j4jdm", "J4J", "youtube","discord.app", "discord.gg", "invite", "discordapp", "discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az", "https", "http", "www\\.", "www//.)", "www", "bet", "ga", "ml", "tk", "cf", "xyz", "store", "ml", "bot", "club", "co", "site", "uk", "biz", "net", "org", "www"]; 
   let reklamisimban = await db.fetch(`reklamisimban_${member.guild.id}`) 
@@ -453,7 +466,9 @@ client.on('guildMemberAdd', async member => {
   } 
 
 });
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on("message", async message => {
     let uyarisayisi = await db.fetch(`reklamuyari_${message.author.id}`);
     let reklamkick = await db.fetch(`reklamkick_${message.guild.id}`)
@@ -511,84 +526,9 @@ client.on("message", async message => {
         }
     }
 });
+//_________________________________________________________________________________________________________________________________//
 
-client.on("message", async message => {
-  let kişiuyari = await db.fetch(  `uyarisayisi_${message.author.id}${message.guild.id}`);
-  let sınır = await db.fetch(`reklamsınır_${message.guild.id}`);
-  let reklambanayar = await db.fetch(`reklambanayar_${message.guild.id}`);
-  let kullanici = message.member;
-  const reklambankelimeler = [
-    "discord.app",
-    "discord.gg",
-    "invite",
-    "discordapp",
-    "discordgg",
-    ".com",
-    ".net",
-    ".xyz",
-    ".tk",
-    ".pw",
-    ".io", 
-    ".me",
-    ".gg",
-    "www.",
-    "https", 
-    "http", 
-    ".gl", 
-    ".org", 
-    ".com.tr", 
-    ".biz",
-    ".party",
-    ".rf",
-    ".gd", 
-    ".az",
-    ".cf",
-    ".me", 
-    ".in"
-  ];
-  if (reklambanayar == "kapali") return;
-  if (reklambanayar == "acik") {
-    if (
-      reklambankelimeler.some(word =>
-        message.content.toLowerCase().includes(word)
-      )
-    ) {
-      if (!message.member.hasPermission("ADMINISTRATOR")) {
-        message.delete();
-        db.add(`uyarisayisi_${message.author.id}${message.guild.id}`, 1);
-        let reklambanuyari = new Discord.RichEmbed()
-          .addField(
-            `Reklam Engellendi`,
-            `Sunucu Reklamını Atan Kişi: **${message.author.tag}**\nUyarı Sayısı: **${kişiuyari}/${sınır}**`
-          )
-          .setTimestamp()
-          .setFooter(`${client.user.username}`, client.user.avatarURL);
-        message.channel
-          .send(reklambanuyari)
-          .then(message => message.delete(10000));
-        if (kişiuyari == sınır) {
-          message.delete();
-          kullanici.ban({
-            reason: `${client.user.username} Reklam Oto Ban Sistemi`
-          });
-          db.set(`uyarisayisi_${message.author.id}${message.guild.id}`, 1);
-          let yeteramkreklamban = new Discord.RichEmbed()
-            .addField(
-              `Reklam Ban Sistemi Reklam Yapan Kişiyi Banladı`,
-              `Reklamdan Banlanan Kişi: **${kullanici}**`
-            )
-            .setTimestamp(new Date())
-            .setFooter(
-              `${client.user.username}`,
-              client.user.avatarURL
-            );
-          message.channel.send(yeteramkreklamban);
-        }
-      }
-    }
-  }
-});
-
+//_________________________________________________________________________________________________________________________________//
 client.on("message", msg => {
  if(!db.has(`reklam_${msg.guild.id}.reklam`)) return;
         const reklam = [".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", "net", ".rf.gd", ".az", ".party", "discord.gg",];
@@ -607,7 +547,9 @@ client.on("message", msg => {
           }
         }
     });
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on("message", async msg => {
     if (msg.channel.type === "dm") return;
       if(msg.author.bot) return;  
@@ -625,7 +567,9 @@ client.on("message", async msg => {
    }
   }
 });
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on("guildMemberAdd", async member => {
     let sayı = await db.fetch(`SayaçSayı_${member.guild.id}`)  
     let kanal = await db.fetch(`SayaçKanal_${member.guild.id}`)             
@@ -643,7 +587,9 @@ client.on("guildMemberAdd", async member => {
     client.channels.cache.get(kanal).send(`📥 ${member}, **Aramızdan ayrıldı!** \`${sayı}\`  kişiye ulaşmak için \`${sonuç}\` kişi kaldı Şuan \`${member.guild.memberCount}\` Kişiyiz.`)
     return
     })  
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on("roleDelete", async role => {
   let kanal = await db.fetch(`rolk_${role.guild.id}`);
   if (!kanal) return;
@@ -665,10 +611,10 @@ client.on("roleDelete", async role => {
    client.channels.cache.get(kanal).send(embed)
   }
 });
+//_________________________________________________________________________________________________________________________________//
 
-
-client.on("message", async msg => {
-  
+//_________________________________________________________________________________________________________________________________//
+client.on("message", async msg => {  
   
  const i = await db.fetch(`${msg.guild.id}.kufur`)
     if (i) {
@@ -687,10 +633,11 @@ client.on("message", async msg => {
     }
     if (!i) return;
 });
+//_________________________________________________________________________________________________________________________________//
 
+//_________________________________________________________________________________________________________________________________//
 client.on("messageUpdate", msg => {
-  
-  
+    
  const i = db.fetch(`${msg.guild.id}.kufur`)
     if (i) {
         const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
@@ -714,7 +661,10 @@ if (message.content === 'z!fakekatıl') {
   client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
     }
 });
+//_________________________________________________________________________________________________________________________________//
 
+
+//_________________________________________________________________________________________________________________________________//
 client.on('guildMemberAdd', async member => {
   let kanal1 = await db.fetch(`otorolkanal_${member.guild.id}`);
     let rol1 = await db.fetch(`otorolrol_${member.guild.id}`);
@@ -728,6 +678,9 @@ client.on('guildMemberAdd', async member => {
   kanal.send(embed)
   member.roles.add(rol)
 });
+//_________________________________________________________________________________________________________________________________//
+
+
 
 /*lient.on(`userUpdate`, (oldUser, newUser) => {
 
