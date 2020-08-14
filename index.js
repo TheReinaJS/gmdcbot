@@ -529,6 +529,85 @@ client.on("message", async message => {
 //_________________________________________________________________________________________________________________________________//
 
 //_________________________________________________________________________________________________________________________________//
+client.on("message", async message => {
+  let kişiuyari = await db.fetch(  `uyarisayisi_${message.author.id}${message.guild.id}`);
+  let sınır = await db.fetch(`reklamsınır_${message.guild.id}`);
+  let reklambanayar = await db.fetch(`reklambanayar_${message.guild.id}`);
+  let kullanici = message.member;
+  const reklambankelimeler = [
+    "discord.app",
+    "discord.gg",
+    "invite",
+    "discordapp",
+    "discordgg",
+    ".com",
+    ".net",
+    ".xyz",
+    ".tk",
+    ".pw",
+    ".io", 
+    ".me",
+    ".gg",
+    "www.",
+    "https", 
+    "http", 
+    ".gl", 
+    ".org", 
+    ".com.tr", 
+    ".biz",
+    ".party",
+    ".rf",
+    ".gd", 
+    ".az",
+    ".cf",
+    ".me", 
+    ".in"
+  ];
+  if (reklambanayar == "kapali") return;
+  if (reklambanayar == "acik") {
+    if (
+      reklambankelimeler.some(word =>
+        message.content.toLowerCase().includes(word)
+      )
+    ) {
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+        message.delete();
+        db.add(`uyarisayisi_${message.author.id}${message.guild.id}`, 1);
+        let reklambanuyari = new Discord.RichEmbed()
+          .addField(
+            `Reklam Engellendi`,
+            `Sunucu Reklamını Atan Kişi: **${message.author.tag}**\nUyarı Sayısı: **${kişiuyari}/${sınır}**`
+          )
+          .setTimestamp()
+          .setFooter(`${client.user.username}`, client.user.avatarURL);
+        message.channel
+          .send(reklambanuyari)
+          .then(message => message.delete(10000));
+        if (kişiuyari == sınır) {
+          message.delete();
+          kullanici.ban({
+            reason: `${client.user.username} Reklam Oto Ban Sistemi`
+          });
+          db.set(`uyarisayisi_${message.author.id}${message.guild.id}`, 1);
+          let yeteramkreklamban = new Discord.RichEmbed()
+            .addField(
+              `Reklam Ban Sistemi Reklam Yapan Kişiyi Banladı`,
+              `Reklamdan Banlanan Kişi: **${kullanici}**`
+            )
+            .setTimestamp(new Date())
+            .setFooter(
+              `${client.user.username}`,
+              client.user.avatarURL
+            );
+          message.channel.send(yeteramkreklamban);
+        }
+      }
+    }
+  }
+});
+//_________________________________________________________________________________________________________________________________//
+
+//_________________________________________________________________________________________________________________________________//
 client.on("message", msg => {
  if(!db.has(`reklam_${msg.guild.id}.reklam`)) return;
         const reklam = [".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", "net", ".rf.gd", ".az", ".party", "discord.gg",];
@@ -682,12 +761,12 @@ client.on('guildMemberAdd', async member => {
 
 
 
-/*lient.on(`userUpdate`, (oldUser, newUser) => {
+client.on(`userUpdate`, (oldUser, newUser) => {
 
-    let kişi = client.users.get(oldUser.id)
+    let kişi = client.users.cache.get(oldUser.id)
     let avatar = kişi.avatarURL.split('?')[0]
-    let kanal = client.channels.find(ch => ch.id === 'NORMAL PROFİL KANAL İD')/// Gifsiz Avatar Kanal İd
-    let kanal1 = client.channels.find(ch => ch.id === 'GİF KANAL İD')/// Gifli Avatar Kanal İd
+    let kanal = client.channels.find(ch => ch.id === '741854835741294694')/// Gifsiz Avatar Kanal İd
+    let kanal1 = client.channels.find(ch => ch.id === '741854835741294694')/// Gifli Avatar Kanal İd
   
   if(avatar.endsWith('.png')) {
     const emb = new Discord.MessageEmbed()
@@ -708,4 +787,4 @@ client.on('guildMemberAdd', async member => {
   
   }
   
-  })*/
+  })
