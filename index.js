@@ -7,12 +7,16 @@ const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
 require('./util/eventLoader')(client);
-//////////7/24///////////
+
+//-------------------- 7/24 Uptime --------------------//
+//-------------------- 7/24 Uptime --------------------//
+//-------------------- 7/24 Uptime --------------------//
+
 const express = require('express');
 const app = express();
 const http = require('http');
     app.get("/", (request, response) => {
-    console.log(`Yeahhh 7/24 AKTİFİM :d`);
+    console.log(`7/24 Hizmet Vermekteyim!`);
     response.sendStatus(200);
     });
     app.listen(process.env.PORT);
@@ -20,7 +24,9 @@ const http = require('http');
     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
     }, 280000);
 
-//////////////////////////
+//-------------------- 7/24 Uptime --------------------//
+//-------------------- 7/24 Uptime --------------------//
+//-------------------- 7/24 Uptime --------------------//
 
 client.on('ready', async () => {
    client.appInfo = await client.fetchApplication();
@@ -227,3 +233,50 @@ client.on('guildMemberAdd', async member => {
 //-------------------- Otorol Sistemi --------------------//
 //-------------------- Otorol Sistemi --------------------//
 //-------------------- Otorol Sistemi --------------------//
+
+//-------------------- Afk Sistemi --------------------//
+//-------------------- Afk Sistemi --------------------//
+//-------------------- Afk Sistemi --------------------//
+
+const ms = require("parse-ms");
+const { DiscordAPIError } = require("discord.js");
+
+client.on("message", async message => {
+  
+if (message.author.bot) return;
+if (!message.guild) return;
+if (message.content.includes(`afk`)) return;
+ 
+if (await db.fetch(`afk_${message.author.id}`)) {
+db.delete(`afk_${message.author.id}`);
+db.delete(`afk_süre_${message.author.id}`);
+  
+const embed = new Discord.MessageEmbed()
+
+.setColor('GREEN')
+.setAuthor(message.author.username, message.author.avatarURL)
+.setDescription(`Afk Modundan Başarıyla Çıkıldı.`)
+
+message.channel.send(embed)
+}
+ 
+var USER = message.mentions.users.first();
+if (!USER) return;
+var REASON = await db.fetch(`afk_${USER.id}`);
+ 
+if (REASON) {
+let süre = await db.fetch(`afk_süre_${USER.id}`);
+let timeObj = ms(Date.now() - süre);
+  
+const afk = new Discord.MessageEmbed()
+
+.setColor('RED')
+.setDescription(`**BU KULLANICI AFK**\n\n**Afk Olan Kullanıcı :** \`${USER.tag}\`\n**Afk Süresi :** \`${timeObj.hours}saat\` \`${timeObj.minutes}dakika\` \`${timeObj.seconds}saniye\`\n**Sebep :** \`${REASON}\``)
+
+message.channel.send(afk)
+}
+});
+
+//-------------------- Afk Sistemi --------------------//
+//-------------------- Afk Sistemi --------------------//
+//-------------------- Afk Sistemi --------------------//

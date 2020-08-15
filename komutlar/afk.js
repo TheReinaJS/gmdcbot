@@ -10,16 +10,19 @@ exports.run = function(client, message, args) {
   
   .setColor('RED')
   .setAuthor(message.author.username, message.author.avatarURL)
-  .setDescription(`AFK Olmak için bir sebep belirtin.`)
+  .setDescription(`Afk Olmak İçin Bir Sebep Belirtin.`)
   
   if(!REASON) return message.channel.send(embed)
  
   db.set(`afk_${USER.id}`, REASON);
   db.set(`afk_süre_${USER.id}`, Date.now());
+  
   const afk = new Discord.MessageEmbed()
-  .setColor('#006400')
-  .setAuthor(message.author.username, message.author.avatarURL)
-  .setDescription(`AFK Moduna başarıyla girildi.`)
+  
+  .setColor('GREEN')
+  .setAuthor(message.author.username)
+  .setDescription(`\`${REASON}\` Sebebiyle Afk Oldu.`)
+  
   message.channel.send(afk)
  
 };
@@ -27,13 +30,12 @@ exports.run = function(client, message, args) {
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: [""],
   permLevel: 0
 };
  
 exports.help = {
   name: 'afk',
-  kategori: 'genel',
   description: 'Kinda Code & Only V12',
-  usage: 'Kinda Code & Only V12'
+  usage: 'afk'
 };
