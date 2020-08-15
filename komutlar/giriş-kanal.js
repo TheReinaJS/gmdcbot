@@ -4,24 +4,37 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
   
-let kinal = db.fetch(`hgK_${message.guild.id}`)
-if(db.has(`hgK_${message.guild.id}`)) {
+if(!message.member.hasPermission("MANAGE_GUILD")) {
   
-const embed = new Discord.MessageEmbed()
+const embed = new Discord.RichEmbed()
 
 .setColor('RED')
-.setDescription(`**Giriş Kanalı <#${kinal}> Kanalına Ayarlı! Kapatmak İçin** \`${ayarlar.prefix}giriş-kanal-kapat kapat\``)
+.setDescription('**Giriş Kanalını Ayarlamak İçin `Sunucuyu Yönet` İznine Sahip Olmalısın!')
 
 return message.channel.send(embed)
-}
+}  
   
+if (args[0] === 'kapat') {
+  
+db.delete(`${message.guild.id}.hgK`)
+db.delete(`${message.guild.id}.kanal`)
+  
+const embed4 = new Discord.MessageEmbed() 
+  
+.setDescription(`Giriş Kanalı Başarıyla Sıfırlandı!`)
+.setColor("GREEN")
+  
+return message.channel.send(embed4)
+}    
+  
+if(db.has(`hgK_${message.guild.id}`)) {  
 let kanal = message.mentions.channels.first();  
 if(!kanal) {
   
 const embed = new Discord.RichEmbed()
 
 .setColor('RED')
-.setDescription(`**Giriş Kanalını Etiketlemedin! \`Doğru Kullanım : ${ayarlar.prefix}giriş-kanal #kanal\`**`)
+.setDescription(`**Giriş Kanalını Etiketlemedin! \n\nAçmak İçin : \`${ayarlar.prefix}giriş-kanal #kanal\`**\n Kapatmak İçin : \`${ayarlar.prefix}giriş-kanal kapat\`**`)
 
 return message.channel.send(embed)
 }

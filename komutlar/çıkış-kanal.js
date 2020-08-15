@@ -20,7 +20,7 @@ if (db.has(`baybayK_${message.guild.id}`)) {
 const embed = new Discord.RichEmbed()
 
 .setColor("RED")
-.setDescription(`**Çıkış Kanalı <#${kinal}> Olarak Ayarlı! Kapatmak İçin** \`${ayarlar.prefix}çıkış-kanal kapat\``);
+.setDescription(`**Çıkış Kanalı <#${kinal}> Olarak Ayarlı! Kapatmak İçin ; \n** \`${ayarlar.prefix}çıkış-kanal kapat\``);
   
 return message.channel.send(embed);
 }
@@ -29,7 +29,7 @@ let kanal = message.mentions.channels.first();
 
 if (!kanal) {
   
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 
 .setColor("RED")
 .setDescription(`**Çıkış Kanalını Etiketlemedin! \`Doğru Kullanım : ${ayarlar.prefix}çıkış-kanal #kanal\`**`);
