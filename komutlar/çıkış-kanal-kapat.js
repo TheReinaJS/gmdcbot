@@ -8,7 +8,7 @@ if (!message.member.hasPermission('ADMINISTRATOR')) {
 const embed = new Discord.MessageEmbed()
 
 .setColor('RED')
-.setDescription('**Giriş Kanalını Kapatmak İçin `Yönetici` İznine Sahip Olmalısın!')
+.setDescription('**Çıkış Kanalını Kapatmak İçin `Yönetici` İznine Sahip Olmalısın!')
 
 return message.channel.send(embed)
 }
@@ -18,18 +18,23 @@ if(zatenkapalı == 'kapali') {
   
 const embed = new Discord.MessageEmbed()
 
-message.channel.send('Giriş Kanalı Sıfırlandı!')
-  
+.setColor('GREEN')
+.setDescription('Çıkış Kanalı Sıfırlandı!')
+
+message.channel.send(embed)  
 };
   
 if(zatenkapalı == 'acik') {
   
-db.delete(`hgK_${message.guild.id}`)
-db.set(`hgK_${message.guild.id}`, 'kapali')
+db.delete(`baybayK_${message.guild.id}`)
+db.set(`baybayK_${message.guild.id}`, 'kapali')
   
 const embed = new Discord.MessageEmbed()
 
-message.channel.send(`Giriş Kanalı Kapatıldı!`);
+.setColor('GREEN')
+.setDescription(`Çıkış Kanalı Kapatıldı!`);
+
+message.channel.send(embed)  
 };
   
 };
@@ -37,12 +42,12 @@ message.channel.send(`Giriş Kanalı Kapatıldı!`);
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['hgkapat'],
+    aliases: ['bbkapat'],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'hg-kapat',
-    description: 'Hoşgeldin kanalını kapatmaya yarar.',
-    usage: 'hg-kapat'
+    name: 'bb-kapat',
+    description: 'BayBay kanalını kapatmaya yarar.',
+    usage: 'bb-kapat'
 };
