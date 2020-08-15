@@ -6,10 +6,7 @@ const log = message => {
     console.log(`${chalk.magenta(moment().format('YYYY-MM h:mm:ss'))} ${message}`)
 }
 
-
-
-
 module.exports = async client => {
-    client.user.setPresence({activity:{name:`z!js`},status: 'online'})
+    client.user.setPresence({activity:{name:`-yardım`},status: 'online'})
     log(chalk.green(`[ BOT ] KOMUTLAR YÜKLENDI KULLANIMA HAZIR `))
   }

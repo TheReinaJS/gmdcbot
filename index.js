@@ -109,3 +109,63 @@ client.elevation = message => {
 };
 
 client.login(ayarlar.token)
+
+//-------------------- Küfür Engel --------------------//
+//-------------------- Küfür Engel --------------------//
+//-------------------- Küfür Engel --------------------//
+
+client.on("message", async msg => {
+  
+  
+ const i = await db.fetch(`${msg.guild.id}.kufur`)
+    if (i) {
+        const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
+        if (kufur.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  msg.delete();
+              
+              const kinda = new Discord.MessageEmbed()
+              
+              .setDescription('Bu Sunucuda Küfür Edemezsin.')
+              .setColor("BLACK")
+              
+              return msg.reply(kinda)
+            }              
+          } catch(err) {
+            console.log(err);
+          }
+        }
+    }
+    if (!i) return;
+});
+
+client.on("messageUpdate", msg => {
+  
+  
+ const i = db.fetch(`${msg.guild.id}.kufur`)
+    if (i) {
+        const kufur = ["oç", "amk", "ananı sikiyim", "ananıskm", "piç", "amk", "amsk", "sikim", "sikiyim", "orospu çocuğu", "piç kurusu", "kahpe", "orospu", "mal", "sik", "yarrak", "am", "amcık", "amık", "yarram", "sikimi ye", "mk", "mq", "aq", "ak", "amq",];
+        if (kufur.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  msg.delete();
+              
+              const kinda = new Discord.MessageEmbed()
+              
+              .setDescription('Bu Sunucuda Küfür Edemezsin.')
+              .setColor("BLACK")
+              
+              return msg.reply(kinda)
+            }              
+          } catch(err) {
+            console.log(err);
+          }
+        }
+    }
+    if (!i) return;
+});
+
+//-------------------- Küfür Engel --------------------//
+//-------------------- Küfür Engel --------------------//
+//-------------------- Küfür Engel --------------------//
