@@ -32,22 +32,18 @@ let kinsta = new Discord.MessageEmbed()
 
 .setColor('')
 
-.setTitle('COVID-19 İstatistik Tablosu')
+.setTitle('Covid-19 İstatistik Tablosu')
 
 .setDescription(`Ülke: **${ülk}**`)
 
-.setThumbnail('https://dfcby4322olzt.cloudfront.net/wp-content/uploads/2020/03/1800x1200_coronavirus_1.jpg')
-
-.addField('*:microbe: Toplam Vaka:*',`**〘 ${body.countrydata[0].total_cases} 〙**`, false)
-.addField('*:syringe: Toplam İyileşen:*',`**〘 ${body.countrydata[0].total_recovered} 〙**`, false)
-.addField('*:dna: Toplam Enfekte:*',`**〘 ${body.countrydata[0].total_active_cases} 〙**`, false)
-.addField('*:skull_crossbones: Toplam Ölümler:*',`**〘 ${body.countrydata[0].total_deaths} 〙**`, false)
-.addField('*:test_tube: Bugünki Vakalar:*',`**〘 ${body.countrydata[0].total_new_cases_today} 〙**`, false)
-.addField('*:warning: Bugünki Ölümler:*',`**〘 ${body.countrydata[0].total_new_deaths_today} 〙**`, false)
-.addField('*:bangbang: Ciddi Vakalar:*',`**〘 ${body.countrydata[0].total_serious_cases} 〙** `, false)
-.addField('*:flag_white:  Ülke:*',`**〘 ${ülk} 〙**`, false)
-
-.setFooter(client.user.avatarURL());
+.addField('*:microbe: Toplam Vaka :*',`**〘 ${body.countrydata[0].total_cases} 〙**`, false)
+.addField('*:syringe: Toplam İyileşen :*',`**〘 ${body.countrydata[0].total_recovered} 〙**`, false)
+.addField('*:dna: Toplam Enfekte :*',`**〘 ${body.countrydata[0].total_active_cases} 〙**`, false)
+.addField('*:skull_crossbones: Toplam Ölümler :*',`**〘 ${body.countrydata[0].total_deaths} 〙**`, false)
+.addField('*:test_tube: Bugünki Vakalar :*',`**〘 ${body.countrydata[0].total_new_cases_today} 〙**`, false)
+.addField('*:warning: Bugünki Ölümler :*',`**〘 ${body.countrydata[0].total_new_deaths_today} 〙**`, false)
+.addField('*:bangbang: Ciddi Vakalar :*',`**〘 ${body.countrydata[0].total_serious_cases} 〙** `, false)
+.addField('*:flag_white:  Ülke :*',`**〘 ${ülk} 〙**`, false)
 
 message.channel.send(kinsta);
 };

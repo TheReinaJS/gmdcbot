@@ -29,12 +29,12 @@ exports.run = async (bot, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["bot-bilgi","botbilgi","i"],
   permLevel: 0
 };
 
 exports.help = {
   name: "istatistik",
   description: "Kinda Code & Only V12",
-  usage: "Kinda Code & Only V12"
+  usage: "istatistik"
 };

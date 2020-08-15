@@ -23,5 +23,5 @@ exports.conf = {
 exports.help = {
   name: 'isim-değiştir',
   usage: 'Kinsta Code & Only V12',
-  description: 'Kinsta Code & Only V12'
+  description: 'isim-değiştir'
 }

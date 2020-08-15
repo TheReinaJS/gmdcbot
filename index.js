@@ -280,3 +280,34 @@ message.channel.send(afk)
 //-------------------- Afk Sistemi --------------------//
 //-------------------- Afk Sistemi --------------------//
 //-------------------- Afk Sistemi --------------------//
+
+client.on("message", async msg => {
+  
+if (msg.channel.type === "dm") return;
+  
+if(msg.author.bot) return;  
+if (msg.content.length > 4) {
+  
+if (db.fetch(`capslock_${msg.guild.id}`)) {
+  
+let caps = msg.content.toUpperCase()
+if (msg.content == caps) {
+  
+if (!msg.member.hasPermission("ADMINISTRATOR")) {
+if (!msg.mentions.users.first()) {
+  
+msg.delete()
+  
+const caps = new Discord.MessageEmbed()
+
+.setColor('BLACK')
+.setDescription(`${msg.author}, Bu Sunucuda, Büyük Harf İle Yazamazsın.`)
+
+return msg.channel.send(caps)
+  
+}
+}
+}
+}
+}
+});
