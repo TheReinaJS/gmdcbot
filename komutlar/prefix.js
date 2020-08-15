@@ -4,7 +4,7 @@ const db = require("quick.db");
 module.exports.run = async (client, message, args) => {
   let prefix = args.slice(0).join(" ");
   if (!prefix) {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setColor("RED")
       .setDescription(`Lütfen Bir Prefix Belirtiniz! Örnek : ${prefix}prefix **!**`)
       .setFooter(client.user.username, client.user.avatarURL);
@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(embed);
     return;
   }
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.MessageEmbed()
       .setColor("GREEN")
       .setDescription(`Prefix ; \`${prefix}\` Olarak Ayarlandı!`)
       .setFooter(client.user.username, client.user.avatarURL);

@@ -5,7 +5,7 @@ let prefix = ayarlar.prefix
 
 exports.run = async (client, message, args) => {
   if (!message.member.hasPermission("BAN_MEMBERS")) {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setDescription(`Ne Yazık Ki Bu Komutu Kullanmaya Yetkin Yok.`)
       .setColor("RED");
 
@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
     return;
   }
   if (!args[0]) {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setColor("RED")
       .setTitle("Reklam-Engel Sistemi!")
       .setDescription(
@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
   let kufur = await db.fetch(`kufur_${message.guild.id}`);
   if (args[0] == "aç") {
     if (kufur) {
-      const embed = new Discord.RichEmbed()
+      const embed = new Discord.MessageEmbed()
         .setColor("RED")
         .setTitle("Reklam-Engel Sistemi!")
         .setDescription("**Görünüşe Göre Reklam-Engel Sistemi Zaten Aktif!**");
@@ -35,7 +35,7 @@ exports.run = async (client, message, args) => {
       return;
     } else {
       db.set(`kufur_${message.guild.id}`, "Açık");
-      const embed = new Discord.RichEmbed()
+      const embed = new Discord.MessageEmbed()
         .setColor("GREEN")
         .setTitle("Reklam-Engel Sistemi!")
         .setDescription("Reklam-Engel Sistemi Başarıyla Açıldı!");
@@ -44,7 +44,7 @@ exports.run = async (client, message, args) => {
     }
   } else if (args[0] == "kapat") {
     db.delete(`kufur_${message.guild.id}`);
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setColor("GREEN")
       .setTitle("Reklam-Engel Sistemi!")
       .setDescription("Reklam-Engel Sistemi Başarıyla Kapandı!");

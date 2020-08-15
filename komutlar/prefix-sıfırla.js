@@ -4,7 +4,7 @@ const db = require("quick.db");
 module.exports.run = async (client, message, args) => {
   let prefix = await db.fetch(`prefix_${message.guild.id}`)
   if (!prefix) {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
       .setColor("RED")
       .setDescription(`Prefix Zaten Ayarlanmamış!`)
       .setFooter(client.user.username, client.user.avatarURL);
@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(embed);
     return;
   }
-  const embed = new Discord.RichEmbed()
+  const embed = new Discord.MessageEmbed()
       .setColor("GREEN")
       .setDescription(`Prefix Başarıyla Sıfırlandı!`)
       .setFooter(client.user.username, client.user.avatarURL);
