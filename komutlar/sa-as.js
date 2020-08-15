@@ -4,7 +4,7 @@ const db = require(`quick.db`);
 
 exports.run = (client, message, args) => {
   
-if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Bu Komutu Kullanmak İçin `MESAJLARI YÖNET` yetkisine sahip olamlısınız!")
+if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Bu Komutu Kullanmak İçin `MESAJLARI YÖNET` Yetkisine Sahip Omalısınız!")
 
 const Bdgo = args.join(` `);
   
@@ -24,26 +24,28 @@ message.channel.send(
   
 new Discord.MessageEmbed()
 .setTitle(`Başarılı`)
-.setDescription(`Bundan Sonra **sa** Yazıldığında as Vereceğim`)
-.setColor(`RANDOM`)
+.setDescription(`Bundan Sonra **sa** Yazıldığında **as** Diye Cevap Vereceğim.`)
+.setColor(`GREEN`)
 )
 }
 
 else if(Bdgo === "kapat") {
-    db.set(`sa-as_${message.guild.id}`, `kapali`);
-    message.channel.send(
-        new Discord.MessageEmbed()
-        .setTitle(`Başarılı`)
-        .setDescription(`Bundan Sonra __sa__ Yazıldığında Cevap Vermeyeceğim`)
-        .setColor(`RANDOM`)
-    )
+  
+db.set(`sa-as_${message.guild.id}`, `kapali`);
+message.channel.send(
+new Discord.MessageEmbed()
+.setTitle(`Başarılı`)
+.setDescription(`Bundan Sonra **sa** Yazıldığında **as** Diye Cevap Vermeyeceğim.`)
+.setColor(`GREEN`)
+)
 }
 
 };
+
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: [`,`]
+    aliases: [`saas`]
   };
   
   exports.help = {
