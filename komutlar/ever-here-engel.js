@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     
   const kinda = new Discord.MessageEmbed() 
   
-  .setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **ever-engel aç/kapat**')
+  .setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **ever-here-engel aç/kapat**')
   .setColor("RED")
 
   return message.channel.send(kinda)
@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
     
   const kinda = new Discord.MessageEmbed() 
   
-  .setDescription('Everyone Engel başarıyla açıldı!')
+  .setDescription('Ever-Here Engel Başarılı Bir Şekilde Aktif Edildi!')
   .setColor("GREEN")
 
   return message.channel.send(kinda)
