@@ -280,3 +280,47 @@ message.channel.send(afk)
 //-------------------- Afk Sistemi --------------------//
 //-------------------- Afk Sistemi --------------------//
 //-------------------- Afk Sistemi --------------------//
+
+//-------------------- Giriş Çıkış Sistemi --------------------//
+//-------------------- Giriş Çıkış Sistemi --------------------//
+//-------------------- Giriş Çıkış Sistemi --------------------//
+
+client.on("guildMemberAdd", async member => {
+  
+  let girenKisi = client.users.get(member.id);
+  let girisKanal = client.channels.get(db.fetch(`hgK_${member.guild.id}`));
+  let Güvenli = `${member} Bu Hesap Güvenli!`;
+  let Şüpheli = `${member} Bu Hesap Güvenli Değil!`;
+
+  const ktarih = new Date().getTime() - girenKisi.createdAt.getTime();
+  var kontrol;
+  
+  if (ktarih > 2629800000) kontrol = Güvenli;
+  if (ktarih < 2629800001) kontrol = Şüpheli;
+  let kanal = await db.fetch(`hgK_${member.guild.id}`);
+  
+  if (!kanal) return;
+  
+  const giris = new Discord.RichEmbed()
+  
+  .setColor("GREEN")
+  .setDescription(`${member} Adlı Kullanıcı Aramıza Katıldı!\nBu Kullanıcıyla Birlikte **${member.guild.memberCount}** Kişi Olduk!\nKullanıcı İd : **${member.user.id}**\n\n**Güvenlik Durumu :**\n${kontrol}`);
+  
+  client.channels.get(kanal).send(giris);
+  }); 
+
+client.on("guildMemberRemove", async member => {
+  
+  let kanal = await db.fetch(`baybayK_${member.guild.id}`);
+  if (!kanal) return;
+  
+  const cikis = new Discord.RichEmbed()
+  .setColor("RED")
+  .setDescription(`${member} Adlı Kullanıcı Aramızdan Ayrıldı!\nBu Kullanıcının Aramızdan Ayrılmasıyla Birlikte **${member.guild.memberCount}** Kişiye Düştük!\nKullanıcı İd : **${member.user.id}**\n`);
+ 
+  client.channels.get(kanal).send(cikis);
+  });
+
+//-------------------- Giriş Çıkış Sistemi --------------------//
+//-------------------- Giriş Çıkış Sistemi --------------------//
+//-------------------- Giriş Çıkış Sistemi --------------------//

@@ -19,10 +19,22 @@ if (db.has(`baybayK_${message.guild.id}`)) {
   
 const embed = new Discord.RichEmbed()
 
-.setColor("BLUE")
-.setDescription(`**Çıkış Kanalı <#${kinal}> Olarak Ayarlı! Kapatmak İçin** \`${ayarlar.prefix}çıkış-kanalkapat\``);
+.setColor("RED")
+.setDescription(`**Çıkış Kanalı <#${kinal}> Olarak Ayarlı! Kapatmak İçin** \`${ayarlar.prefix}çıkış-kanal kapat\``);
   
 return message.channel.send(embed);
+}
+  
+if (args[0] === 'kapat') {
+  
+db.delete(`${message.guild.id}.baybayK`)
+  
+const kinda = new Discord.MessageEmbed() 
+  
+.setDescription(`Çıkış Kanalı Başarıyla Sıfırlandı!`)
+.setColor("GREEN")
+  
+return message.channel.send(kinda)
 }
 
 let kanal = message.mentions.channels.first();
