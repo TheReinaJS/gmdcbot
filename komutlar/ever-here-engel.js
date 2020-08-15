@@ -1,0 +1,53 @@
+const db = require('quick.db');
+const Discord = require('discord.js')
+
+exports.run = async (client, message, args) => {
+  
+  if (!args[0]) {
+    
+  const kinda = new Discord.MessageEmbed() 
+  
+  .setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **ever-engel aç/kapat**')
+  .setColor("RED")
+
+  return message.channel.send(kinda)
+  }
+  
+  if (args[0] == 'aç') {
+    
+  db.set(`hereengel_${message.guild.id}`, 'acik')
+    
+  const kinda = new Discord.MessageEmbed() 
+  
+  .setDescription('Everyone Engel başarıyla açıldı!')
+  .setColor("GREEN")
+
+  return message.channel.send(kinda)
+  }
+  
+  if (args[0] == 'kapat') {
+    
+  db.set(`hereengel_${message.guild.id}`, 'kapali')
+    
+  const kinda = new Discord.MessageEmbed() 
+  
+  .setDescription('Ever-Here Engel Başarılı Bir Şekilde Deaktif Edildi!')
+  .setColor("GREEN")
+
+  return message.channel.send(kinda)
+  } 
+  
+  }
+
+exports.conf = {
+  enabled: true,
+  guildOnly: true,
+  aliases: ['ever-here-engel','everhere-engel','ever-hereengel'],
+  permLevel: 3
+};
+
+exports.help = {
+  name: 'everhereengel',
+  description: 'Kinda Code & Only V12',
+  usage: 'everhereengel'
+};

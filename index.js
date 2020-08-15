@@ -170,31 +170,31 @@ client.on("messageUpdate", msg => {
 //-------------------- Küfür Engel --------------------//
 //-------------------- Küfür Engel --------------------//
 
-//-------------------- Reklam Engel --------------------//
-//-------------------- Reklam Engel --------------------//
-//-------------------- Reklam Engel --------------------//
+//-------------------- Ever Here Engel --------------------//
+//-------------------- Ever Here Engel --------------------//
+//-------------------- Ever Here Engel --------------------//
 
-client.on("message", msg => {
- if(!db.has(`reklam_${msg.guild.id}.reklam`)) return;
+client.on("message", async msg => {
   
- const reklam = [".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", "net", ".rf.gd", ".az", ".party", "discord.gg",];
- if (reklam.some(word => msg.content.includes(word))) {
+let hereengelle = await db.fetch(`hereengel_${msg.guild.id}`)
+ if (hereengelle == 'acik') {
    
- try {
-   
- if (!msg.member.hasPermission("BAN_MEMBERS")) {
- msg.delete();
-   
- const kinda = new Discord.MessageEmbed()  
-   
- .setDescription('Bu Sunucuda Reklam Yapamazsın.')
- .setColor("BLACK")
-              
- return msg.reply(kinda)                          
+      const here = ["@here", "@everyone"];
+  if (here.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.channel.send(`<@${msg.author.id}>`).then(message => message.delete());
+        var e = new Discord.MessageEmbed()
+        .setColor("BLACK")
+        .setDescription(`Bu Sunucuda Everyone ve Here Yasak!`)
+        msg.channel.send(e);
+        }
+    }
+ } else if (hereengelle == 'kapali') {
  
- }              
- } catch(err) {
- console.log(err);
- }
- }
- });
+}
+});
+
+//-------------------- Ever Here Engel --------------------//
+//-------------------- Ever Here Engel --------------------//
+//-------------------- Ever Here Engel --------------------//
