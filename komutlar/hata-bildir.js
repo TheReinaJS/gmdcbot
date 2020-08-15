@@ -8,7 +8,7 @@ if (type.length < 1) {
 const embed = new Discord.MessageEmbed()
 
 .setColor('RED')
-.setDescription('Doğru Kullanım : -istek-bildir <isteğiniz>')
+.setDescription('Doğru Kullanım : -hata-bildir <bulduğunuz hata>')
 
 return message.channel.send(embed)
 }
@@ -16,7 +16,7 @@ return message.channel.send(embed)
 const embed = new Discord.MessageEmbed()
 
 .setColor('GREEN')
-.setDescription('İstek Kodunuz Başarıyla Bildirildi.\nEn Yakın Zamanda <@&kanal id> Kanalından Cevap Vereceğiz!')
+.setDescription('Botta Bulduğunuz Hata Başarıyla Bildirildi.\nEn Yakın Zamanda <@&kanal id> Kanalından Cevap Vereceğiz!')
 
 message.channel.send(embed)
   
@@ -24,10 +24,10 @@ const embed2 = new Discord.MessageEmbed()
 
 .setColor("GREEN")
 
-.setDescription(`**${message.author.tag}** Adlı Kullanıcının **İsteği ;**`)
+.setDescription(`**${message.author.tag}** Adlı Kullanıcının **Botta Bulduğu Hata ;**`)
 
 .addField(`:envelope: **Gönderen Kişinin Bilgileri ;**`, `:white_small_square: Kullanıcı İd : ${message.author.id}\n:white_small_square: Kullanıcı Adı : ${message.author.username}\n:white_small_square: Kullanıcı Tagı : ${message.author.discriminator}`)
-.addField(":pencil: **Gönderilen İstek/Tavsiye Mesajı**", type)
+.addField(":pencil: **Gönderilen Hata/Bug Mesajı**", type)
 
 .setThumbnail(message.author.avatarURL)
 
@@ -38,12 +38,12 @@ client.channels.cache.get('kanal id').send(embed2);
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ["istek-bildir","istekbildir"],
+    aliases: ["hata-bildir","hatabildir"],
     permLevel: 0
 }
 
 exports.help = {
-    name: 'istek',
-    description: 'isteğinizi belirtilen kanala bildirir.',
-    usage: 'istek'
+    name: 'hata',
+    description: 'Botta bulduğunuz hatayı belirtilen kanala bildirir.',
+    usage: 'hata'
 }
