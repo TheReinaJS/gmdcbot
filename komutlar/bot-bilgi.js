@@ -23,6 +23,7 @@ exports.run = async (bot, message, args) => {
   .addField("» **İşletim Sistemi**", `\`\`${os.platform()}\`\``) 
   .addField("**» Bot Davet**", " [Davet Et](BOT DAVET LİNKİ)", )
   .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](DESTEK SUNUCUSU)", )
+   
  return message.channel.send(istatistikler);
   };
 
