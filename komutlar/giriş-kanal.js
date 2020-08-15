@@ -4,12 +4,12 @@ const ayarlar = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
   
-if(!message.member.hasPermission("MANAGE_GUILD")) {
+if (!message.member.hasPermission('ADMINISTRATOR')) {
   
 const embed = new Discord.MessageEmbed()
 
 .setColor('RED')
-.setDescription('**Giriş Kanalını Ayarlamak İçin `Sunucuyu Yönet` İznine Sahip Olmalısın!')
+.setDescription('**Giriş Kanalını Kapatmak İçin `Yönetici` İznine Sahip Olmalısın!')
 
 return message.channel.send(embed)
 }

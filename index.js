@@ -324,3 +324,16 @@ client.on("guildMemberRemove", async member => {
 //-------------------- Giriş Çıkış Sistemi --------------------//
 //-------------------- Giriş Çıkış Sistemi --------------------//
 //-------------------- Giriş Çıkış Sistemi --------------------//
+
+client.on("message", async message => {
+  
+const Bdgo = message.content.toLocaleLowerCase();
+  
+if(Bdgo === "selam" || Bdgo === "sa" || Bdgo === "selamün aleyküm" || Bdgo === "selamun aleyküm" || Bdgo === "slm" || Bdgo === "sea"){
+let e = await db.fetch(`sa-as_${message.guild.id}`)
+if(e === "acik"){
+  
+message.channel.send(`Aleyküm Selam, Hoş Geldin ^^`)
+}
+  }
+});
