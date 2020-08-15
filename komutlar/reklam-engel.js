@@ -7,9 +7,12 @@ if(args[0] === 'aç') {
   
 db.set(`${message.guild.id}.reklam`, true)
   
-message.channel.send(`Reklam Engel Başarılı Bir Şekilde Akif Edildi.`)
+const kinda = new Discord.MessageEmbed() 
   
-return
+.setDescription(`Reklam Engel Başarılı Bir Şekilde Akif Edildi.`)
+.setColor("GREEN")
+
+return message.channel.send(kinda)  
 }
   
 if (args[0] === 'kapat') {
@@ -18,9 +21,10 @@ db.delete(`${message.guild.id}.reklam`)
   
 const kinda = new Discord.MessageEmbed() 
   
-.setDescription(`Reklam Engel Başarılı Bir Şekilde Kapatıldı Edildi`)
-  
-return
+.setDescription(`Reklam Engel Başarılı Bir Şekilde Deaktif Edildi`)
+.setColor("GREEN")
+
+return message.channel.send(kinda)  
 }
 {
   

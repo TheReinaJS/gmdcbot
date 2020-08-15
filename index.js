@@ -169,3 +169,32 @@ client.on("messageUpdate", msg => {
 //-------------------- Küfür Engel --------------------//
 //-------------------- Küfür Engel --------------------//
 //-------------------- Küfür Engel --------------------//
+
+//-------------------- Reklam Engel --------------------//
+//-------------------- Reklam Engel --------------------//
+//-------------------- Reklam Engel --------------------//
+
+client.on("message", msg => {
+ if(!db.has(`reklam_${msg.guild.id}.reklam`)) return;
+  
+ const reklam = [".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", "net", ".rf.gd", ".az", ".party", "discord.gg",];
+ if (reklam.some(word => msg.content.includes(word))) {
+   
+ try {
+   
+ if (!msg.member.hasPermission("BAN_MEMBERS")) {
+ msg.delete();
+   
+ const kinda = new Discord.MessageEmbed()  
+   
+ .setDescription('Bu Sunucuda Reklam Yapamazsın.')
+ .setColor("BLACK")
+              
+ return msg.reply(kinda)                          
+ 
+ }              
+ } catch(err) {
+ console.log(err);
+ }
+ }
+ });
