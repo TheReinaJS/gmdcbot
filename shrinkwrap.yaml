@@ -9,6 +9,7 @@ dependencies:
   fs: 0.0.2
   hastebin-gen: 2.0.5
   jimp: 0.16.0
+  js-robloxapi: 1.0.6
   moment: 2.27.0
   moment-duration-format: 2.3.2
   ms: 2.1.2
@@ -1523,6 +1524,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jA55yJiB5tCXEddos8JBbvW+IMrqY0y1tjjx9KNVtA+QPmu7ND5j0zkKopClpUTsaETL135uOM2XfcYG4XRjmw==
+  /js-robloxapi/1.0.6:
+    dependencies:
+      request: 2.88.2
+    dev: false
+    resolution:
+      integrity: sha512-QjBGS/D2HDGcBnnjRrYXn1+4GJYcsRQ8IL1jPmOYraz4WZvAtNQARG+wAhlym7fErDZonswGYaW6GCnDTa8M2g==
   /jsbn/0.1.1:
     dev: false
     resolution:
@@ -2861,6 +2868,7 @@ specifiers:
   fs: ^0.0.2
   hastebin-gen: ^2.0.5
   jimp: ^0.16.0
+  js-robloxapi: ^1.0.6
   moment: ^2.27.0
   moment-duration-format: ^2.3.2
   ms: ^2.1.2
