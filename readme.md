@@ -1,5 +1,7 @@
-# Kinsta Code & Only V12
+# Kinsta Code & Only V12 Discord Server
 
-[![Js Versions](https://img.shields.io/badge/3.7%20%7C%203.8-blue)](https://www.javascript.com/try)  
+<a href="https://discord.gg/Zv9C4ep"><img src="https://discordapp.com/api/guilds/718709023427526697/widget.png?style=banner2" /></a> 
 
-<a href="https://discord.gg/Zv9C4ep"><img src="https://discordapp.com/api/guilds/718709023427526697/widget.png?style=banner2" /></a>  
+# Learn To JavaScript 
+
+[![Js Versions](https://cdn.discordapp.com/attachments/733640065200160768/744234083651158138/try2.PNG)](https://www.javascript.com/try)  
