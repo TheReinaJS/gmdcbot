@@ -5,7 +5,7 @@ exports.run = async (app, message, client) => {
   
   const kinda = new Discord.MessageEmbed()
   
-  .setColor("BLACK")
+  .setColor("RED")
   .setDescription('Ping Hesaplanıyor...')
   
    let start = Date.now(); 
@@ -16,8 +16,11 @@ exports.run = async (app, message, client) => {
     setInterval(() => {
         
    const only = new Discord.MessageEmbed()
-    .setDescription(`\nMesaj gecikme süresi; **${diff}ms** \n\nBot gecikme Süresi; **${API}ms**`)
-        mesaj.edit(only);
+   
+   .setDescription(`\nMesaj Gecikme Süresi ; **${diff}Ms** \n\nBot Gecikme Süresi ; **${API}Ms**`)
+   .setColor('GREEN')
+   
+    mesaj.edit(only);
       
     }, 5000)
   
@@ -29,12 +32,12 @@ exports.run = async (app, message, client) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ['ms'],
   permLevel: 0
 };
 
 exports.help = {
   name: 'ping',
   description: 'Kinda Code & Only V12.',
-  usage: 'Kinda Code & Only V12'
+  usage: 'ping'
 };
