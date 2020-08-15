@@ -1,4 +1,4 @@
-const Discord = require('discord.js'); 
+const Discord = require('discord.js');
 const client = new Discord.Client();
 const jimp = require("jimp");
 const db = require('quick.db');
