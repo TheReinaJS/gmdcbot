@@ -1,13 +1,27 @@
-const discord = require('discord.js');
-const fs = require('fs');
-const jimp = require("jimp");
-const http = require('http');
-const express = require('express');
-const ayarlar = require('./ayarlar.json');
-const app = express();
-const db = require('quick.db');
-const Discord = require('discord.js');
+const Discord = require('discord.js'); 
 const client = new Discord.Client();
+const jimp = require("jimp");
+const db = require('quick.db');
+const ayarlar = require('./ayarlar.json');
+const chalk = require('chalk');
+const fs = require('fs');
+const moment = require('moment');
+require('./util/eventLoader')(client);
+//////////7/24///////////
+const express = require('express');
+const app = express();
+const http = require('http');
+    app.get("/", (request, response) => {
+    console.log(`Yeahhh 7/24 AKTİFİM :d`);
+    response.sendStatus(200);
+    });
+    app.listen(process.env.PORT);
+    setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    }, 280000);
+
+//////////////////////////
+
 client.on('ready', async () => {
    client.appInfo = await client.fetchApplication();
   setInterval( async () => {
