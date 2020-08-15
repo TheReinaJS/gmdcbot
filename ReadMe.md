@@ -3,13 +3,9 @@
 
 <a href="https://discord.gg/78WkvBg"><img src="https://discord.com/api/guilds/741807561581264916/widget.png?style=banner2" /></a>
 
-# Venosa Team / Discord Server
+# Darknes Code & BotList / Discord Server
 
 <a href="https://discord.gg/qhKhepC"><img src="https://discord.com/api/guilds/707632395397890058/widget.png?style=banner2" /></a>
-
-# Venosa Destek / Discord Server
-
-<a href="https://discord.gg/bjAKYDf"><img src="https://discord.com/api/guilds/707632395397890058/widget.png?style=banner2" /></a>
 
 # Learn To JavaScript 
 

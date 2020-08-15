@@ -376,6 +376,10 @@ client.on("guildMemberRemove", async member => {
 //-------------------- Giriş Çıkış Sistemi --------------------//
 //-------------------- Giriş Çıkış Sistemi --------------------//
 
+//-------------------- Sa As Sistemi --------------------//
+//-------------------- Sa As Sistemi --------------------//
+//-------------------- Sa As Sistemi --------------------//
+
 client.on("message", async message => {
   const Bdgo = message.content.toLocaleLowerCase();
 
@@ -389,11 +393,23 @@ client.on("message", async message => {
   ) {
     let e = await db.fetch(`sa-as_${message.guild.id}`);
     if (e === "acik") {
-      message.channel.send(`Aleyküm Selam, Hoş Geldin ^^`);
+      const embed = new Discord.RichEmbed()
+      
+     .setDescription(`Aleyküm Selam, Hoş Geldin ^-^`)
+     .setColor("GREEN")
+      
+    return message.channel.send(embed)
     }
   }
 });
 
+//-------------------- Sa As Sistemi --------------------//
+//-------------------- Sa As Sistemi --------------------//
+//-------------------- Sa As Sistemi --------------------//
+
+//-------------------- Reklam Engel Sistemi --------------------//
+//-------------------- Reklam Engel Sistemi --------------------//
+//-------------------- Reklam Engel Sistemi --------------------//
 
 client.on("message", async message => {
   let uyarisayisi = await db.fetch(`reklamuyari_${message.author.id}`);
@@ -484,3 +500,7 @@ client.on("message", async message => {
     }
   }
 });
+
+//-------------------- Reklam Engel Sistemi --------------------//
+//-------------------- Reklam Engel Sistemi --------------------//
+//-------------------- Reklam Engel Sistemi --------------------//
