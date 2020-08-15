@@ -19,26 +19,25 @@ if (args[0] === 'kapat') {
 db.delete(`${message.guild.id}.hgK`)
 db.delete(`${message.guild.id}.kanal`)
   
-const embed4 = new Discord.MessageEmbed() 
+const embed = new Discord.MessageEmbed() 
   
 .setDescription(`Giriş Kanalı Başarıyla Sıfırlandı!`)
 .setColor("GREEN")
   
-return message.channel.send(embed4)
+return message.channel.send(embed)
 }    
   
-if(db.has(`hgK_${message.guild.id}`)) {  
-let kanal = message.mentions.channels.first();  
-if(!kanal) {
+if(db.has(`hgK_${message.guild.id}`)) {
   
-const embed = new Discord.RichEmbed()
+const embed = new Discord.MessageEmbed()
 
 .setColor('RED')
-.setDescription(`**Giriş Kanalını Etiketlemedin! \n\nAçmak İçin : \`${ayarlar.prefix}giriş-kanal #kanal\`**\n Kapatmak İçin : \`${ayarlar.prefix}giriş-kanal kapat\`**`)
+.setDescription(`**Giriş Kanalını Etiketlemedin! \n\nAçmak İçin : \`${ayarlar.prefix}giriş-kanal #kanal\`**`)
 
 return message.channel.send(embed)
-}
+};
   
+let kanal = message.mentions.channels.first();  
 db.set(`hgK_${message.guild.id}`, kanal.id);
 
 const embed = new Discord.RichEmbed()
@@ -46,7 +45,7 @@ const embed = new Discord.RichEmbed()
 .setColor('GREEN')
 .setDescription(`**Giriş Kanalı ${kanal} Olarak Ayarlandı!**`)   
 
-message.channel.send(embed)                                                                                                                                      
+message.channel.send(embed)  
 }; 
 
 exports.conf = {
