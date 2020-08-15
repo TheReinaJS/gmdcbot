@@ -8,7 +8,8 @@ exports.run = async (client, message, args) => {
   let capslock = await db.fetch(`capslock_${message.guild.id}`)
   
   if (capslock) {
-  db.delete(`capslock_${message.guild.id}`)
+    
+  db.delete(`capslock_${message.guild.id}`,'kapat')
     
   const embed = new Discord.MessageEmbed()   
     

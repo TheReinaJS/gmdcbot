@@ -304,9 +304,9 @@ const caps = new Discord.MessageEmbed()
 .setDescription(`${msg.author}, Bu Sunucuda, Büyük Harf İle Yazamazsın.`)
 
 return msg.channel.send(caps)
+}
+}
   
-}
-}
 }
 }
 }
