@@ -77,17 +77,17 @@ exports.run = (client, message, params) => {
     .setAuthor(message.guild.name, message.guild.iconURL)
     
     .addField("👑 Sunucu Sahibi", message.guild.owner)
-    .addField("🔖 Sunucu Adı", message.guild.name)
-    .addField("🆔 Sunucu ID", message.guild.id)
+    .addField(":clipboard: Sunucu Adı", message.guild.name)
+    .addField(":iphone: Sunucu ID", message.guild.id)
     .addField("🎭 Rol Sayısı", message.guild.roles.size)
-    .addField("🏰 Kanal Sayısı",message.guild.channels.size)
+    .addField(":receipt: Kanal Sayısı",message.guild.channels.size)
     .addField("😍 Emoji Sayısı", message.guild.emojis.size)
-    .addField("🌍 Sunucu Bölgesi", message.guild.region)
+    .addField(":globe_with_meridians: Sunucu Bölgesi", message.guild.region)
     .addField(":bust_in_silhouette: Üye Sayısı", message.guild.memberCount)
     .addField("🔇 AFK Kanalı", message.guild.afkChannel)
-    .addField('⏰ AFK Zaman Aşımı', message.guild.afkTimeout)
-    .addField('☑ Sistem Mesaj Kanalı ', message.guild.systemChannel)
-    .addField(":calendar_spiral:  Oluşturulma Tarihi", `${tarih}`)
+    .addField(':timer: AFK Zaman Aşımı', message.guild.afkTimeout)
+    .addField(':tools: Sistem Mesaj Kanalı ', message.guild.systemChannel)
+    .addField(":calendar_spiral: Oluşturulma Tarihi", `${tarih}`)
     
     .setThumbnail(message.guild.iconURL);
     
