@@ -24,18 +24,6 @@ const embed = new Discord.RichEmbed()
   
 return message.channel.send(embed);
 }
-  
-if (args[0] === 'kapat') {
-  
-db.delete(`${message.guild.id}.baybayK`)
-  
-const kinda = new Discord.MessageEmbed() 
-  
-.setDescription(`Çıkış Kanalı Başarıyla Sıfırlandı!`)
-.setColor("GREEN")
-  
-return message.channel.send(kinda)
-}
 
 let kanal = message.mentions.channels.first();
 
