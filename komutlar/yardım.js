@@ -1,11 +1,13 @@
 const Discord = require('discord.js')
+const ayarlar = require('../ayarlar.json')
+let prefixs = ayarlar.prefix
 
 exports.run = async (client, message, args) => { 
   
   const embed = new Discord.MessageEmbed()
   .setColor("BLACK")
   .setTitle('Kinsta Yardım Menüsü ^-^')
-  .setDescription('Botu Kullanırken Rollerde En Üste Almayı Unutma.\n``-sil``\nİstediğiniz miktarda mesaj silersiniz.\n\n``-avatar``\nAvatar  profilinizi atar.\n\n``-istatistik``\nBot hakkında bilgi verir.\n\n``-davet``\nBotun davet linkini atar.\n\n``-ever-here-engel``\nEveryone Here Engel Sistemini görüntülersiniz.\n\n``-hata-bildir``\nBotta bulduğunuz hatayı kurucuya bildirirsiniz.\n\n``-isim-değiştir``\nBelirlediğiniz kullanıcının ismini değiştirirsiniz.\n\n``-istek-bildir``\nBotta istediğiniz komudu kurucuya bildirirsiniz.\n\n``-korona``\nSeçilen ülkü kodunu girerek korona hakkındaki istatistikleri görüntülersiniz.\n\n``-kullanıcıbilgim``\nSizin veya etiketledğiniz kullanıcının bilgilernini gösterir.\n\n``-küfür-engel``\nKüfür Engel Sistemini açarsınız.\n\n``-otorol``\nSunucuya yeni gelen üyeye ayarlanan rölü verir.\n\n``-ping``\nBotun pingi hakkında bilgi verir.\n\n``-prefix``\nSunucuza özel prefix ayarlarsınız.\n\n``-prefix-sıfırla``\nAyarlanan prefixi sıfırlarsınız.\n\n``-reklam-engel``\nReklam engel sistemini açarsınız.\n\n``-reklamtaraması``\nSunucunuzda reklam taramasını yaparsınız.\n\n``-sa-as``\nSa diyen kişiye otomatik as cevabını verir.\n\n``-sunucu-bilgi``\nSunucu hakkında bilgi verir\n\n``-slowmode``\nYavaş mod sistemini çalıştırırsınız.')
+  .setDescription('Botu Kullanırken Rollerde En Üste Almayı Unutma.\n``${prefix}sil``\nİstediğiniz miktarda mesaj silersiniz.\n\n``${prefix}avatar``\nAvatar  profilinizi atar.\n\n``${prefix}istatistik``\nBot hakkında bilgi verir.\n\n``${prefix}davet``\nBotun davet linkini atar.\n\n``${prefix}ever-here-engel``\nEveryone Here Engel Sistemini görüntülersiniz.\n\n``${prefix}hata-bildir``\nBotta bulduğunuz hatayı kurucuya bildirirsiniz.\n\n``${prefix}isim-değiştir``\nBelirlediğiniz kullanıcının ismini değiştirirsiniz.\n\n``${prefix}istek-bildir``\nBotta istediğiniz komudu kurucuya bildirirsiniz.\n\n``${prefix}korona``\nSeçilen ülkü kodunu girerek korona hakkındaki istatistikleri görüntülersiniz.\n\n``${prefix}kullanıcıbilgim``\nSizin veya etiketledğiniz kullanıcının bilgilernini gösterir.\n\n``${prefix}küfür-engel``\nKüfür Engel Sistemini açarsınız.\n\n``${prefix}otorol``\nSunucuya yeni gelen üyeye ayarlanan rölü verir.\n\n``${prefix}ping``\nBotun pingi hakkında bilgi verir.\n\n``${prefix}prefix``\nSunucuza özel prefix ayarlarsınız.\n\n``${prefix}reklam-engel``\nReklam engel sistemini açarsınız.\n\n``${prefix}reklamtaraması``\nSunucunuzda reklam taramasını yaparsınız.\n\n``-sa-as``\nSa diyen kişiye otomatik as cevabını verir.\n\n``-sunucu-bilgi``\nSunucu hakkında bilgi verir\n\n``-slowmode``\nYavaş mod sistemini çalıştırırsınız.')
   
  message.channel.send(embed)
 }
@@ -19,6 +21,6 @@ exports.conf = {
 
 exports.help = {
   name: 'yardım',
-  description: 'Yardım menüsünü gösterir.Kodlayan Alycia Debnam',
+  description: 'Kinda Code & Only V12',
   usage: 'yardım'
 }

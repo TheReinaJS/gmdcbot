@@ -1,10 +1,8 @@
 const db = require("quick.db");
 
-const ayarlar = require('../ayarlar.json')
+const {prefix} = require('../ayarlar.json')
 
 exports.run = async (client, message, args) => {
-
-    //PERMISSION
 
     if (!message.member.hasPermission("ADMINISTRATOR")) {
 
@@ -42,11 +40,11 @@ exports.run = async (client, message, args) => {
 
 
 
-    if (args.join("") === default_prefix) {
+    if (args.join("") === prefix) {
 
       db.delete(`prefix_${message.guild.id}`);
 
-      return await message.channel.send("Prefix sıfırlandı! ✅");
+      return await message.channel.send("Prefix sıfırlandı!");
 
     }
 
@@ -72,5 +70,5 @@ exports.conf = {
 exports.help = {
   name: "prefix",
   description: "Kinda Code & Only V12",
-  usage: "sunucubilgi"
+  usage: "prefix"
 };
