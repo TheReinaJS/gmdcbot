@@ -554,3 +554,208 @@ client.on("message", async message => {
 //-------------------- Prefix Sistemi --------------------//
 //-------------------- Prefix Sistemi --------------------//
 //-------------------- Prefix Sistemi --------------------//
+
+//-------------------- Mod Log Sistemi --------------------//
+//-------------------- Mod Log Sistemi --------------------//
+//-------------------- Mod Log Sistemi --------------------//
+
+client.on('channelCreate', async channel => {
+  const c = channel.guild.channels.get(db.fetch(`codeminglog_${channel.guild.id}`));
+  if (!c) return;
+    var embed = new Discord.RichEmbed()
+                    .addField(`Kanal oluşturuldu`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+    c.send(embed)
+});
+
+client.on('channelDelete', async channel => {
+  const c = channel.guild.channels.get(db.fetch(`codeminglog_${channel.guild.id}`));
+  if (!c) return;
+    let embed = new Discord.RichEmbed()
+                    .addField(`Kanal silindi`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+
+    c.send(embed)
+});
+
+   client.on('channelNameUpdate', async channel => {
+  const c = channel.guild.channels.get(db.fetch(`codeminglog_${channel.guild.id}`));
+  if (!c) return;
+    var embed = new Discord.RichEmbed()
+                    .addField(`Kanal İsmi değiştirildi`, ` Yeni İsmi: \`${channel.name}\`\nID: ${channel.id}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
+    c.send(embed)
+});
+
+client.on('emojiCreate', emoji => {
+  const c = emoji.guild.channels.get(db.fetch(`codeminglog_${emoji.guild.id}`));
+  if (!c) return;
+
+    let embed = new Discord.RichEmbed()
+                    .addField(`Emoji oluşturuldu`, ` İsmi: \`${emoji.name}\`\n GIF?: **${emoji.animated}**\nID: ${emoji.id}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${emoji.client.user.username}#${emoji.client.user.discriminator}`, emoji.client.user.avatarURL)
+
+    c.send(embed)
+    });
+client.on('emojiDelete', emoji => {
+  const c = emoji.guild.channels.get(db.fetch(`codeminglog_${emoji.guild.id}`));
+  if (!c) return;
+
+    let embed = new Discord.RichEmbed()
+                    .addField(`Emoji silindi`, ` İsmi: \`${emoji.name}\`\n GIF? : **${emoji.animated}**\nID: ${emoji.id}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${emoji.client.user.username}#${emoji.client.user.discriminator}`, emoji.client.user.avatarURL)
+
+    c.send(embed)
+    });
+client.on('emojiUpdate', (oldEmoji, newEmoji) => {
+  const c = newEmoji.guild.channels.get(db.fetch(`codeminglog_${newEmoji.guild.id}`));
+  if (!c) return;
+
+    let embed = new Discord.RichEmbed()
+                    .addField(`Emoji güncellendi`, ` Eski ismi: \`${oldEmoji.name}\`\n Yeni ismi: \`${newEmoji.name}\`\nID: ${oldEmoji.id}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${newEmoji.client.user.username}#${newEmoji.client.user.discriminator}`, newEmoji.client.user.avatarURL)
+
+    c.send(embed)
+    });
+
+client.on('guildBanAdd', async (guild, user) => {    
+    const channel = guild.channels.get(db.fetch(`codeminglog_${guild.id}`));
+  if (!channel) return;
+  
+  const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
+
+    let embed = new Discord.RichEmbed()
+                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL)
+                    .addField(`Kullanıcı banlandı`, ` İsmi: \`${user.username}\`\n ID: **${user.id}**\n Sebep: **${entry.reason || 'Belirtmedi'}**\n Banlayan: **${entry.executor.username}#${entry.executor.discriminator}**`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL)
+
+    channel.send(embed)
+});
+
+client.on('guildBanRemove', async (guild, user) => {    
+    const channel = guild.channels.get(db.fetch(`codeminglog_${guild.id}`));
+  if (!channel) return;
+  
+  const entry = await guild.fetchAuditLogs({type: 'MEMBER_BAN_ADD'}).then(audit => audit.entries.first())
+
+    let embed = new Discord.RichEmbed()
+                    .setAuthor(`${user.username}#${user.discriminator}`, user.avatarURL)
+                    .addField(`Kullanıcının banı açıldı`, ` İsmi: \`${user.username}\`\n ID: **${user.id}**\n Banı Kaldıran: **${entry.executor.username}#${entry.executor.discriminator}**`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${entry.executor.username}#${entry.executor.discriminator} tarafından`, entry.executor.avatarURL)
+
+    channel.send(embed)
+});
+client.on('messageDelete', async message => {    
+  if(message.author.bot) return
+
+    const channel = message.guild.channels.get(db.fetch(`codeminglog_${message.guild.id}`));
+  if (!channel) return;
+  
+    let embed = new Discord.RichEmbed()
+                    .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
+                    .setTitle("Mesaj silindi")                
+                    .addField(`Silinen mesaj : ${message.content}`,`Kanal: ${message.channel.name}`)
+                  //  .addField(`Kanal:`,`${message.channel.name}`)
+                    .setTimestamp()
+                    .setColor("Black")
+                    .setFooter(`${message.client.user.username}#${message.client.user.discriminator}`, message.client.user.avatarURL)
+
+    channel.send(embed)
+});
+
+client.on('messageUpdate', async(oldMessage, newMessage) => {
+    if(oldMessage.author.bot) return;
+    if(oldMessage.content == newMessage.content) return;
+
+    const channel = oldMessage.guild.channels.get(db.fetch(`codeminglog_${oldMessage.guild.id}`));
+    if(!channel) return;
+
+    let embed = new Discord.RichEmbed()
+    .setTitle("Mesaj güncellendi!")
+    .addField("Eski mesaj : ",`${oldMessage.content}`)
+    .addField("Yeni mesaj : ",`${newMessage.content}`)
+    .addField("Kanal : ",`${oldMessage.channel.name}`)
+    .setTimestamp()
+    .setColor("Black")
+    .setFooter(`${oldMessage.client.user.username}#${oldMessage.client.user.discriminator}`,`${oldMessage.client.user.avatarURL}`)
+
+    channel.send(embed)
+});
+
+client.on('roleCreate', async (role) => {    
+
+    const channel = role.guild.channels.get(db.fetch(`codeminglog_${role.guild.id}`));
+  if (!channel) return;
+  
+    let embed = new Discord.RichEmbed()
+.addField(`Rol oluşturuldu`, ` ismi: \`${role.name}\`\n ID: ${role.id}`)                    
+.setTimestamp()
+.setColor("Black")
+.addField("Rol renk kodu : ",`${role.hexColor}`)
+.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)
+
+    channel.send(embed)
+});
+
+client.on('roleDelete', async (role) => {    
+
+    const channel = role.guild.channels.get(db.fetch(`codeminglog_${role.guild.id}`));
+  if (!channel) return;
+  
+    let embed = new Discord.RichEmbed()
+.addField(`Rol silindi`, ` ismi: \`${role.name}\`\n ID: ${role.id}`)                    
+.setTimestamp()
+.setColor("Black")
+    .addField("Rol renk kodu : ",`${role.hexColor}`)
+.setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)
+
+    channel.send(embed)
+})
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+  
+ // if (!logA[oldMember.guild.id]) return;
+  
+  if (db.has(`codeminglog_${oldMember.guild.id}`) === false) return;
+  
+  var kanal = oldMember.guild.channels.get(db.fetch(`codeminglog_${oldMember.guild.id}`).replace("<#", "").replace(">", ""))
+  if (!kanal) return;
+  
+  let newUserChannel = newMember.voiceChannel
+  let oldUserChannel = oldMember.voiceChannel
+
+  if(oldUserChannel === undefined && newUserChannel !== undefined) {
+
+    const embed = new Discord.RichEmbed()
+    .setColor("Black")
+    .setDescription(`${newMember.user.tag} adlı kullanıcı \`${newUserChannel.name}\` isimli sesli kanala giriş yaptı!`)
+    kanal.send(embed);
+    
+  } else if(newUserChannel === undefined){
+
+    const embed = new Discord.RichEmbed()
+    .setColor("Black")
+    .setDescription(`${newMember.user.tag} adlı kullanıcı sesli kanaldan çıkış yaptı!`)
+    kanal.send(embed);
+    
+  }
+});
+
+//-------------------- Mod Log Sistemi --------------------//
+//-------------------- Mod Log Sistemi --------------------//
+//-------------------- Mod Log Sistemi --------------------//
