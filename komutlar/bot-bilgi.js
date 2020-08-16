@@ -21,8 +21,8 @@ exports.run = async (bot, message, args) => {
   .addField("» **CPU**", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
   .addField("» **Bit**", `\`${os.arch()}\``, true)
   .addField("» **İşletim Sistemi**", `\`\`${os.platform()}\`\``) 
-  .addField("**» Bot Davet**", " [Davet Et](BOT DAVET LİNKİ)", )
-  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](DESTEK SUNUCUSU)", )
+  .addField("**» Bot Davet**", " [Davet Et](https://discord.com/oauth2/authorize?client_id=744137158004047882&scope=bot&permissions=8)", )
+  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/Zv9C4ep)", )
    
  return message.channel.send(istatistikler);
   };

@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const db = require('quick.db');
 const ayarlar = require('../ayarlar.json')
+let prefix = ayarlar.prefix
 
 exports.run = async (client, message, args) => {
   
@@ -11,7 +12,7 @@ if(!rol) {
   
 const embed2 = new Discord.MessageEmbed()
 
-.setDescription('Lütfen Bir Rol Etiketle. Örnek Kullanım : **otorol @rol #kanal**')
+.setDescription('Lütfen Bir Rol Etiketle. Örnek Kullanım : **${prefix}otorol @rol #kanal**')
 .setColor('RED')
 
 return message.channel.send(embed2)
@@ -21,7 +22,7 @@ if(!kanal) {
   
 const embed3 = new Discord.MessageEmbed()
 
-.setDescription('Lütfen Bir Kanal Etiketle. Örnek Kullanım : **otorol @rol #kanal**')
+.setDescription('Lütfen Bir Kanal Etiketle. Örnek Kullanım : **${prefix}otorol @rol #kanal**')
 .setColor('RED')
   
 return message.channel.send(embed3)

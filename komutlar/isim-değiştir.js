@@ -2,7 +2,7 @@ const discord = require('discord.js')
 
 exports.run = async(client, message, args) => {
 
-if (!message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send(`Bu komutu kullanabilmek için **Kullanıcı Adlarını Yönet** yetkisine sahip olmalısın.`);
+if (!message.member.hasPermission('MANAGE_NICKNAMES')) return message.channel.send(`Bu Komutu Kullanabilmek İçin **Kullanıcı Adlarını Yönet** Yetkisine Sahip Olmalısın.`);
   
 let kinsta = message.mentions.members.first()
 if (!kinsta) return message.channel.send(`Bir kullanıcı etiketlemelisin.`)

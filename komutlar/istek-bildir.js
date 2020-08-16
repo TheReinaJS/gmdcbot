@@ -1,4 +1,6 @@
 const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json')
+let prefix = ayarlar.prefix
 
 exports.run = async(client, message, args) => {
   
@@ -8,7 +10,7 @@ if (type.length < 1) {
 const embed = new Discord.MessageEmbed()
 
 .setColor('RED')
-.setDescription('Doğru Kullanım : -istek-bildir <isteğiniz>')
+.setDescription('Doğru Kullanım : ${prefix}istek-bildir <isteğiniz>')
 
 return message.channel.send(embed)
 }

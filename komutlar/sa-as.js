@@ -1,10 +1,11 @@
-const Discord = require(`discord.js`);
-const ayarlar = require(`../ayarlar.json`)
-const db = require(`quick.db`);
+const Discord = require('discord.js');
+const db = require('quick.db');
+const ayarlar = require('../ayarlar.json')
+let prefix = ayarlar.prefix
 
 exports.run = (client, message, args) => {
   
-if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Bu Komutu Kullanmak İçin `MESAJLARI YÖNET` Yetkisine Sahip Omalısınız!")
+if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Bu Komutu Kullanmak İçin `Mesajları Yönet` Yetkisine Sahip Omalısınız!")
 
 const Bdgo = args.join(` `);
   
@@ -13,7 +14,7 @@ if(!Bdgo) message.channel.send(
 new Discord.MessageEmbed()
   
 .setTitle(`Doğru Kullanım`)
-.setDescription(`Sa-as Sistemini Çalıştırmak İçin ; \n**-sa-as aç** Veya **-sa-as kapat** Yazınız!`)
+.setDescription(`Sa-as Sistemini Çalıştırmak İçin ; \n**${prefix}sa-as aç** Veya **${prefix}sa-as kapat** Yazınız!`)
 .setColor(`RED`)        
 )
   

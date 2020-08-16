@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const db = require('quick.db');
 const ayarlar = require('../ayarlar.json')
+let prefix = ayarlar.prefix
 
 exports.run = async (client, message, args) => {
   
@@ -8,7 +9,7 @@ exports.run = async (client, message, args) => {
     
   const embed = new Discord.MessageEmbed()
   
-  .setDescription(`Bu Komutu Kullanmak İçin **yönetici** Yetkisine Sahip Olmalısın!`)
+  .setDescription(`Bu Komutu Kullanmak İçin **Yönetici** Yetkisine Sahip Olmalısın!`)
   .setColor("RED")
   .setFooter(client.user.username, client.user.avatarURL);
 
@@ -24,7 +25,7 @@ exports.run = async (client, message, args) => {
     
   var embed = new Discord.MessageEmbed()
   
-  .setDescription(`Lütfen Talimatları Uygulayın. Örnek Kullanım : **-slowmode 5**`)
+  .setDescription(`Lütfen Talimatları Uygulayın. Örnek Kullanım : **${prefix}slowmode 5**`)
   .setColor("RED")
   .setFooter(client.user.username, client.user.avatarURL);
     

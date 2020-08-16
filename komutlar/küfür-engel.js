@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
+const ayarlar = require('../ayarlar.json')
+let prefix = ayarlar.prefix
 
 exports.run = async (client ,message, args) => {
   
@@ -30,7 +32,7 @@ return message.channel.send(kinda)
   
 const kinda = new Discord.MessageEmbed() 
   
-.setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **küfür-engel aç/kapat**')
+.setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **${prefix}küfür-engel aç/kapat**')
 .setColor("RED")
 
 return message.channel.send(kinda)
