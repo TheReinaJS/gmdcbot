@@ -2,11 +2,11 @@ const Discord = require("discord.js");
 const db = require("quick.db");
 
 module.exports.run = async (client, message, args) => {
-  let prefix = args.slice(0).join(" ");
+  let prefix = await db.fetch(`prefix_${message.guild.id}`)
   if (!prefix) {
     const embed = new Discord.MessageEmbed()
       .setColor("RED")
-      .setDescription(`Lütfen Bir Prefix Belirtiniz! Örnek : ${prefix}prefix **!**`)
+      .setDescription(`Prefix Zaten Ayarlanmamış!`)
       .setFooter(client.user.username, client.user.avatarURL);
 
     message.channel.send(embed);
@@ -14,22 +14,22 @@ module.exports.run = async (client, message, args) => {
   }
   const embed = new Discord.MessageEmbed()
       .setColor("GREEN")
-      .setDescription(`Prefix ; \`${prefix}\` Olarak Ayarlandı!`)
+      .setDescription(`Prefix Başarıyla Sıfırlandı!`)
       .setFooter(client.user.username, client.user.avatarURL);
 
     message.channel.send(embed);
-  db.set(`prefix_${message.guild.id}`, prefix)
+  db.delete(`prefix_${message.guild.id}`)
 };
 
 module.exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
+  aliases: ["prefixsıfırla"],
   permLevel: 3
 };
 
 module.exports.help = {
-  name: "prefix",
-  description: "prefix",
-  usage: "prefix"
+  name: "prefix-sıfırla",
+  description: "prefix-sıfırla",
+  usage: "prefix-sıfırla"
 };

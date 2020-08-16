@@ -26,6 +26,7 @@ dependencies:
   steam-provider: 0.2.0
   superagent: 6.0.0
   weather-js: 2.0.0
+  wio.db: 3.0.5
   ytdl-core: 3.2.1
 packages:
   /@babel/runtime/7.11.2:
@@ -1211,6 +1212,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+  /fs/0.0.1-security:
+    dev: false
+    resolution:
+      integrity: sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
   /fs/0.0.2:
     dev: false
     resolution:
@@ -2792,6 +2797,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==
+  /wio.db/3.0.5:
+    dependencies:
+      chalk: 4.1.0
+      fs: 0.0.1-security
+      moment: 2.27.0
+    dev: false
+    resolution:
+      integrity: sha512-VjdPeVW+pufak5QA0gDKaBbLS9ytd/hOdtqverXk0Ad661AdK9UAJ/r7MT2z7BGN5Sr0G5iTtg98pqbM6tIvvw==
   /wrappy/1.0.2:
     dev: false
     resolution:
@@ -2885,4 +2898,5 @@ specifiers:
   steam-provider: ^0.2.0
   superagent: ^6.0.0
   weather-js: ^2.0.0
+  wio.db: ^3.0.5
   ytdl-core: ^3.2.1

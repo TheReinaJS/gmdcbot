@@ -34,7 +34,8 @@
     "ytdl-core": "^3.2.1",
     "reaction-role": "^2.1.5",
     "pokedex-api": "^1.1.2",
-    "js-robloxapi": "^1.0.6"
+    "js-robloxapi": "^1.0.6",
+    "wio.db": "^3.0.5"
   },
   "engines": {
     "node": "12.x"
