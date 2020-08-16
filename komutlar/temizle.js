@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     
   const temizle = new Discord.MessageEmbed()  
   
-  .setDescription(`Temizlenecek Mesaj Miktarını Belirtmelisin!\n\n Örnek Kullanım : **${prefix}temizle 10`)
+  .setDescription(`Temizlenecek Mesaj Miktarını Belirtmelisin!\n\n Örnek Kullanım : ${prefix}**temizle 10**`)
   .setColor("RED")
   
   return message.channel.send(temizle)

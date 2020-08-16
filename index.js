@@ -542,16 +542,10 @@ client.on("message", async message => {
   const cmd = args.shift().toLowerCase();
 
   if (cmd.length === 0) return;
-
-  // Komutu Al.
   
   let command = client.commands.get(cmd);
 
-  // Hiçbiri Bulunamazsa Takma Ad İle Bulmaya Çalışın.
-
   if (!command) command = client.commands.get(client.aliases.get(cmd));
-
-  // Sonunda Bir Komut Bulunursa, Komutu Çalıştırın.
 
   if (command) command.run(client, message, args);
 
