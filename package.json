@@ -35,7 +35,8 @@
     "reaction-role": "^2.1.5",
     "pokedex-api": "^1.1.2",
     "js-robloxapi": "^1.0.6",
-    "wio.db": "^3.0.5"
+    "wio.db": "^3.0.5",
+    "proton-io": "^0.0.5"
   },
   "engines": {
     "node": "12.x"

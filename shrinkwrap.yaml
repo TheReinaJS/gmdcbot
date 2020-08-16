@@ -17,6 +17,7 @@ dependencies:
   os: 0.1.1
   parse-ms: 2.1.0
   pokedex-api: 1.1.2
+  proton-io: 0.0.5
   quick.db: 7.1.1
   randomstring: 1.1.5
   reaction-role: 2.1.5
@@ -2157,6 +2158,13 @@ packages:
       node: '>= 0.6.0'
     resolution:
       integrity: sha1-FjjYqONML0QKkduVq5rrZ3/Bhc8=
+  /proton-io/0.0.5:
+    dependencies:
+      chalk: 4.1.0
+      fs: 0.0.1-security
+    dev: false
+    resolution:
+      integrity: sha512-whOgtbr5DMVyqZWVj4x6DnMteBWv8o42+2P/TDbrKs6lNmCxCgahJbxshiUzALxm4nQjX9ZOxwgdvDGTNpE+Yg==
   /proxy-addr/2.0.5:
     dependencies:
       forwarded: 0.1.2
@@ -2889,6 +2897,7 @@ specifiers:
   os: ^0.1.1
   parse-ms: ^2.1.0
   pokedex-api: ^1.1.2
+  proton-io: ^0.0.5
   quick.db: ^7.1.1
   randomstring: ^1.1.5
   reaction-role: ^2.1.5
