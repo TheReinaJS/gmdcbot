@@ -28,7 +28,7 @@ exports.conf = {
 
 exports.help = {
 	name: 'reklam-taraması',
-	description: 'Kullanıcıların oynuyor mesajlarındaki ve kullanıcı adlarındaki reklamları tarar.',
+	description: 'Kinda Code & Only V12.',
 	usage: 'reklam-taraması',
  
 }

@@ -1,125 +1,35 @@
 const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
-const db = require('quick.db');
-const moment = require('moment');
 
-exports.run = async (client, message, params) => {
-  
-  let prefix = ayarlar.prefix
-  
-  var verti = message.guild.verificationLevel;
-   const vertific = ['Yok', 'Düşuk', 'Orta', 'Yüksek', 'En Yüksek'];
-  
-  var konum = ''
-        if(message.guild.region === "russia") {
-            var konum = 'Rusya :flag_ru:'
-        }
-        if(message.guild.region === "us-west") {
-            var konum = 'Batı Amerika :flag_us: '
-        }
-        if(message.guild.region === "us-south") {
-            var konum = 'Güney Amerika :flag_us: '
-        }
-        if(message.guild.region === "us-east") {
-            var konum = 'Doğu Amerika :flag_us: '
-        }
-        if(message.guild.region === "us-central") {
-            var konum = 'Amerika :flag_us: '
-        }
-        if(message.guild.region === "brazil") {
-            var konum = 'Brezilya :flag_br:'
-        }
-        if(message.guild.region === "singapore") {
-            var konum = 'Singapur :flag_sg:'
-        }
-        if(message.guild.region === "sydney") {
-            var konum = 'Sidney :flag_sh:'
-        }
-        if(message.guild.region === "eu-west") {
-            var konum = 'Batı Avrupa :flag_eu:'
-        }
-        if(message.guild.region === "eu-south") {
-            var konum = 'Güney Avrupa :flag_eu:'
-        }
-        if(message.guild.region === "eu-east") {
-            var konum = 'Doğu Avrupa :flag_eu:'
-        }
-        if(message.guild.region === "eu-central") {
-            var konum = 'Avrupa :flag_eu:'
-        }
-        if(message.guild.region === "hongkong") {
-            var konum = 'Hong Kong :flag_hk: '
-        }
-        if(message.guild.region === "japan") {
-            var konum = 'Japonya :flag_jp:'
-        }
-        var tarih = ''
-        if(moment(message.guild.createdAt).format('MM') === '01') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Ocak ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '02') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Şubat ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '03') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Mart ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '04') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Nisan ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '05') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Mayıs ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-  
-        if(moment(message.guild.createdAt).format('MM') === '06') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Haziran ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '07') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Temmuz ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '08') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Ağustos ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '09') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Eylül ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '10') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Ekim ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '11') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Kasım ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-        if(moment(message.guild.createdAt).format('MM') === '12') {
-            var tarih = `${moment(message.guild.createdAt).format('DD')} Aralık ${moment(message.guild.createdAt).format('YYYY HH:mm:ss')} `
-        }
-  
-   const embed = new Discord.RichEmbed()
-   .setColor("GREEN")
-   .setAuthor(`${message.guild.name} - Sunucu Bilgileri`)
-   .setThumbnail(message.guild.iconURL, true)
-   .addField('İsim', message.guild.name, true)
-   .addField('İd', message.guild.id, true)
-   .addField('Bölgesi', konum, true)
-   .addField('Sahibi', message.guild.owner, true)
-   .addField('Üyeler ['+message.guild.memberCount+']', `<:onlinek:520096446050074638> Çevrimiçi: ${message.guild.members.filter(m => m.user.presence.status === "online").size} \n<:dndk:520096438319972352> Rahatsız Etmeyin: ${message.guild.members.filter(m => m.user.presence.status === "dnd").size} \n<:bostak:520096436575010829> Boşta: ${message.guild.members.filter(m => m.user.presence.status === "idle").size} \n<:offlinek:520096445886496773> Çevrımdışı/Görünmez: ${message.guild.members.filter(m => m.user.presence.status === "offline").size} \n<:botTagk:520096437716123668> Bot: ${message.guild.members.filter(m => m.user.bot).size}`, true)
-   .addField('Kanallar ['+message.guild.channels.size+']', `Yazı: ${message.guild.channels.filter(c => c.type === "text").size} \nSesli: ${message.guild.channels.filter(c => c.type === "voice").size} \nKategori: ${message.guild.channels.filter(c => c.type === "category").size} \n💤AFK Kanalı: ${message.guild.afkChannel ? message.guild.afkChannel : 'Bulunmuyor.'}`, true)
-   .addField('Roller ['+message.guild.roles.size+']', `\`${prefix}roller\` yazarak görebilirsiniz.`, true)
-   .addField('Emojiler ['+message.guild.emojis.size+']', `\`${prefix}emojiler\` yazarak görebilirsiniz.`, true)
-   .addField('AFK Zaman Aşımı', message.guild.afkTimeout, true)
-   .addField('Oluşturma Tarihi', tarih)
-   .addField('Doğrulama seviyesi', `${vertific[message.guild.verificationLevel]}`, true)
-   
-   message.channel.send(embed);
+exports.run = (client, message) => {
+
+const embed = new Discord.MessageEmbed()
+
+.setAuthor('Sunucu Bilgi', message.guild.iconURL)
+.setThumbnail(message.guild.iconURL)
+.addField('Sunucu İsmi', message.guild.name)
+.addField('Sunucu İdsi', message.guild.id)
+.addField('Sunucu Bölgesi', message.guild.region)
+.addField(`Üyeler ${message.guild.memberCount}`, `Çevrimiçi : ${message.guild.members.filter(m => m.user.presence.status === "online").size}\n Rahatsız Etmeyin: ${message.guild.members.filter(m => m.user.presence.status === 'dnd').size} \n Boşta: ${message.guild.members.filter(m => m.user.presence.status === 'idle').size} \n Çevrimdışı: ${message.guild.members.filter(m => m.user.presence.status === 'offline').size}`)
+.addField(`Kanallar ${message.guild.memberCount}`, ` Yazı: ${message.guild.channels.filter(c => c.type === 'text').size} \n Sesli: ${message.guild.channels.filter(c => c.type === 'voice').size} \n Kategori: ${message.guild.channels.filter(c => c.type === 'category').size}`)
+.addField('Roller:', message.guild.roles.map(role => role.name).join(', '), true)
+.addField('AFK kanalı:', `${message.guild.afkChannel}`, true)
+.addField('AFK zaman aşımı:', message.guild.afkTimeout, true)
+.addField('Oluşturma tarihi:', message.guild.createdAt, true)
+.setTimestamp()
+.setFooter('Sunucu Bilgi', message.guild.iconURL)
+return message.channel.send(embed)
+
+}; 
+
+module.exports.conf = {
+aliases: ["sunucu-bilgi"],
+permLevel: 0, 
+enabled: true,
+guildOnly: true
 };
 
- exports.conf = {
-   enabled: true,
-   guildOnly: false,
-   aliases: ["sunucubilgi"],
-   permLevel: 0
- };
-
- exports.help = {
-   name: 'sunucu-bilgi',
-   description: 'Kinda Code & Only V12.',
-   usage: 'sunucu-bilgi'
- };
+module.exports.help = {
+    name: 'sunucubilgi',
+    description: 'Kinda Code & Only V12',
+    usage: 'sunucubilgi'
+};
