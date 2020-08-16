@@ -70,9 +70,7 @@ exports.run = async (bot, msg, args) => {
   
         const uembed = new Discord.MessageEmbed()
         
-        .setAuthor(user.tag, userinfo.avatar)
-        .setThumbnail(userinfo.avatar)
-        .setTitle('Kullanıcı')
+        .setTitle(user.tag)
         .addField(`Şu Anda Oynadığı Oyun :`, userinfo.od1, false)
         .addField(`Durum :`, userinfo.status, false)
         .setColor('GREEN')
