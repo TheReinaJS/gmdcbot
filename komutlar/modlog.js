@@ -43,12 +43,12 @@ console.log(`Mod-log komutu ${message.author.username} Tarafından kullanıldı`
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['mod-log'],
+    aliases: ['modlog'],
     permLevel: 0 
 };
 //lrowsxrd
 exports.help = {
-    name: 'mod-log',
+    name: 'modlog',
     description: 'lrowsv12',
-    usage: 'mod-log'
+    usage: 'modlog'
 };
