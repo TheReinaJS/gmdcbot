@@ -199,7 +199,9 @@ client.on("messageUpdate", msg => {
       "mq",
       "aq",
       "ak",
-      "amq"
+      "amq",
+      "daşşak",
+      "oç",
     ];
     if (kufur.some(word => msg.content.includes(word))) {
       try {
@@ -391,7 +393,8 @@ client.on("message", async message => {
       ".biz",
       ".party",
       ".rf.gd",
-      ".az"
+      ".az",
+      ".hub"
     ];
     if (reklam.some(word => message.content.toLowerCase().includes(word))) {
       if (!message.member.hasPermission("BAN_MEMBERS")) {
