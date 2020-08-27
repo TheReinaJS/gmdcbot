@@ -3,17 +3,17 @@ const moment = require('moment')
 const client = new Discord.Client();
 
 exports.run = async (bot, msg, args) => {
-  
+  //lrowsxrd
         let simdikitarih = moment.utc(msg.createdAt).format('DD MM YYYY');
-  
+  //lrowsxrd
         let user = msg.mentions.users.first() || msg.author;
-  
+  //lrowsxrd
         let userinfo = {};
         userinfo.avatar= user.displayAvatarURL;
         userinfo.id = user.id;
         userinfo.od1 = msg.guild.members.cache.get(user.id).user.presence.game || "Oynadığı Bir Oyun Yok."
         userinfo.status = user.presence.status.toString()
-  
+  //lrowsxrd
         .replace("dnd", `Rahatsız Etmeyin`)
         .replace("online", `Çevrimiçi`)
         .replace("idle", `Boşta`)
@@ -21,11 +21,11 @@ exports.run = async (bot, msg, args) => {
         userinfo.bot = user.bot.toString()
         .replace("false", `Hayır`)
         .replace("true", `Evet`)
-  
+  //lrowsxrd
         userinfo.sonmesaj = user.lastMessage || "Son Yazılan Mesaj Bulunamadı." || "Son Yazılan Mesaj Gösterilemedi."
   
         userinfo.dctarih = moment.utc(msg.guild.members.cache.get(user.id).user.createdAt).format('**YYYY** [Yılında] MMMM [Ayında] dddd [Gününde] (**DD/MM/YYYY**)')
-  
+  //lrowsxrd
         .replace("Monday", `**Pazartesi**`)
         .replace("Tuesday", `**Salı**`)
         .replace("Wednesday", `**Çarşamba**`)
@@ -45,9 +45,9 @@ exports.run = async (bot, msg, args) => {
         .replace("October", `**Ekim**`)
         .replace("November", `**Kasım**`)
         .replace("December", `**Aralık**`)
-  
+  //lrowsxrd
         userinfo.dctarihkatilma = moment.utc(msg.guild.members.cache.get(user.id).joinedAt).format('**YYYY** [Yılında] MMMM [Ayında] dddd [Gününde] (**DD/MM/YYYY**)')
-  
+  //lrowsxrd
         .replace("Monday", `**Pazartesi**`)
         .replace("Tuesday", `**Salı**`)
         .replace("Wednesday", `**Çarşamba**`)
@@ -67,9 +67,9 @@ exports.run = async (bot, msg, args) => {
         .replace("October", `**Ekim**`)
         .replace("November", `**Kasım**`)
         .replace("December", `**Aralık**`)
-  
+  //lrowsxrd
         const uembed = new Discord.MessageEmbed()
-        
+        //lrowsxrd
         .setTitle(user.tag)
         .addField(`Şu Anda Oynadığı Oyun :`, userinfo.od1, false)
         .addField(`Durum :`, userinfo.status, false)

@@ -8,7 +8,7 @@ exports.run = async (bot, message, args) => {
   
    const seksizaman = moment.duration(bot.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
    const istatistikler = new Discord.MessageEmbed()
-   
+  //lrowsxrd 
   .setColor('BLACK')
   .setFooter('Bot İsmi', bot.user.avatarURL)
   .addField("» **Botun Sahibi**", "<@201016292885397504>")

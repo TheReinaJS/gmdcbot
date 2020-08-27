@@ -14,7 +14,7 @@ const embed = new Discord.MessageEmbed()
 
 return message.channel.send(embed)
 }
-  
+  //lrowsxrd
 const embed = new Discord.MessageEmbed()
 
 .setColor('GREEN')

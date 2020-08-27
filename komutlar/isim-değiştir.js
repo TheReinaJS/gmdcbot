@@ -13,7 +13,7 @@ if (!kinsta) return message.channel.send(`Değiştirilicek ismi girin.`)
 kinsta.setNickname(isim)
 message.channel.send(`${kinsta} Adlı Kullanıcının Yeni İsmi **${isim}\** Olarak Ayarlandı!`)
 }
-
+//lrowsxrd
 exports.conf = {
   name: true,
   guildonly: false,

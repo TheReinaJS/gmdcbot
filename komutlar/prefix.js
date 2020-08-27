@@ -69,6 +69,6 @@ exports.conf = {
 
 exports.help = {
   name: "prefix",
-  description: "lrows v12",
+  description: "lrowsxrd",
   usage: "prefix"
 };

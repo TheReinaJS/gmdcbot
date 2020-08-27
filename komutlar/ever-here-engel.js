@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
 
   return message.channel.send(kinda)
   }
-  
+  //lrowsxrd
   if (args[0] == 'kapat') {
     
   db.set(`hereengel_${message.guild.id}`, 'kapali')

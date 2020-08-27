@@ -16,7 +16,7 @@ return message.channel.send(embed)
 }
   
 const embed = new Discord.MessageEmbed()
-
+//lrowsxrd
 .setColor('GREEN')
 .setDescription('Botta Bulduğunuz Hata Başarıyla Bildirildi.\nEn Yakın Zamanda <@&kanal id> Kanalından Cevap Vereceğiz!')
 

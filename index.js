@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const jimp = require("jimp");
 const db = require("quick.db");
-const ayarlar = require("./ayarlar.json");
+const ayarlar = require("./ayarlar.json");//lrowsxrd
 const chalk = require("chalk");
 const fs = require("fs");
 const moment = require("moment");
@@ -18,7 +18,7 @@ const http = require("http");
 app.get("/", (request, response) => {
   console.log(`7/24 Hizmet Vermekteyim!`);
   response.sendStatus(200);
-});
+});//lrowsxrd
 app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
@@ -36,7 +36,7 @@ client.on("ready", async () => {
 });
 
 const log = message => {
-  console.log(` ${message}`);
+  console.log(` ${message}`);//lrowsxrd
 };
 require("./util/eventLoader.js")(client);
 
@@ -53,7 +53,7 @@ fs.readdir("./komutlar/", (err, files) => {
       client.aliases.set(alias, props.help.name);
     });
   });
-});
+});//lrowsxrd
 client.reload = command => {
   return new Promise((resolve, reject) => {
     try {
@@ -91,7 +91,7 @@ client.unload = command => {
   return new Promise((resolve, reject) => {
     try {
       delete require.cache[require.resolve(`./komutlar/${command}`)];
-      let cmd = require(`./komutlar/${command}`);
+      let cmd = require(`./komutlar/${command}`);//lrowsxrd
       client.commands.delete(command);
       client.aliases.forEach((cmd, alias) => {
         if (cmd === command) client.aliases.delete(alias);
@@ -112,9 +112,9 @@ client.elevation = message => {
   if (message.author.id === ayarlar.sahip) permlvl = 4;
   return permlvl;
 };
-
+//lrowsxrd
 client.login(ayarlar.token);
-
+//lrowsxrd
 //-------------------- Küfür Engel --------------------//
 //-------------------- Küfür Engel --------------------//
 //-------------------- Küfür Engel --------------------//
@@ -166,7 +166,7 @@ client.on("message", async msg => {
         console.log(err);
       }
     }
-  }
+  }//lrowsxrd
   if (!i) return;
 });
 
@@ -246,7 +246,7 @@ client.on("message", async msg => {
       }
     }
   } else if (hereengelle == "kapali") {
-  }
+  }//lrowsxrd
 });
 
 //-------------------- Ever Here Engel --------------------//
@@ -282,7 +282,7 @@ client.on("guildMemberAdd", async member => {
 //-------------------- Otorol Sistemi --------------------//
 //-------------------- Otorol Sistemi --------------------//
 
-//-------------------- Afk Sistemi --------------------//
+//-------------------- Afk Sistemi --------------------////lrowsxrd
 //-------------------- Afk Sistemi --------------------//
 //-------------------- Afk Sistemi --------------------//
 
@@ -317,7 +317,7 @@ client.on("message", async message => {
 
     const afk = new Discord.MessageEmbed()
 
-      .setColor("RED")
+      .setColor("RED")//lrowsxrd
       .setDescription(
         `**BU KULLANICI AFK**\n\n**Afk Olan Kullanıcı :** \`${USER.tag}\`\n**Afk Süresi :** \`${timeObj.hours}saat\` \`${timeObj.minutes}dakika\` \`${timeObj.seconds}saniye\`\n**Sebep :** \`${REASON}\``
       );
@@ -358,7 +358,7 @@ client.on("message", async message => {
 });
 
 //-------------------- Sa As Sistemi --------------------//
-//-------------------- Sa As Sistemi --------------------//
+//-------------------- Sa As Sistemi --------------------////lrowsxrd
 //-------------------- Sa As Sistemi --------------------//
 
 //-------------------- Reklam Engel Sistemi --------------------//
@@ -399,7 +399,7 @@ client.on("message", async message => {
         db.add(`reklamuyari_${message.author.id}`, 1); //uyarı puanı ekleme
         if (uyarisayisi === null) {
           let uyari = new Discord.RichEmbed()
-            .setColor("BLACK")
+            .setColor("BLACK")//lrowsxrd
             .setTitle("lrowsxrd Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İlk Uyarın! (1/3)`
@@ -440,7 +440,7 @@ client.on("message", async message => {
             reason: `lrowsxrd Reklam-Engel Sistemi!`
           });
           db.delete(`reklamuyari_${message.author.id}`);
-          let uyari = new Discord.RichEmbed()
+          let uyari = new Discord.RichEmbed()//lrowsxrd
             .setColor("BLACK")
             .setTitle("lrowsxrd Reklam Kick Sistemi")
             .setDescription(
@@ -482,7 +482,7 @@ client.on("message", async message => {
   if (!message.member)
 
     message.member = await message.guild.fetchMember(message);
-
+//lrowsxrd
 
 
   const args = message.content
@@ -518,7 +518,7 @@ client.on('channelCreate', async channel => {
   if (!c) return;
     var embed = new Discord.RichEmbed()
                     .addField(`Kanal oluşturuldu`, ` İsmi: \`${channel.name}\`\n Türü: **${channel.type}**\nID: ${channel.id}`)
-                    .setTimestamp()
+                    .setTimestamp()//lrowsxrd
                     .setColor("Black")
                     .setFooter(`${channel.client.user.username}#${channel.client.user.discriminator}`, channel.client.user.avatarURL)
     c.send(embed)
@@ -573,7 +573,7 @@ client.on('emojiDelete', emoji => {
     });
 client.on('emojiUpdate', (oldEmoji, newEmoji) => {
   const c = newEmoji.guild.channels.get(db.fetch(`codeminglog_${newEmoji.guild.id}`));
-  if (!c) return;
+  if (!c) return;//lrowsxrd
 
     let embed = new Discord.RichEmbed()
                     .addField(`Emoji güncellendi`, ` Eski ismi: \`${oldEmoji.name}\`\n Yeni ismi: \`${newEmoji.name}\`\nID: ${oldEmoji.id}`)
@@ -599,7 +599,7 @@ client.on('guildBanAdd', async (guild, user) => {
 
     channel.send(embed)
 });
-
+//lrowsxrd
 client.on('guildBanRemove', async (guild, user) => {    
     const channel = guild.channels.get(db.fetch(`codeminglog_${guild.id}`));
   if (!channel) return;
@@ -620,9 +620,9 @@ client.on('messageDelete', async message => {
 
     const channel = message.guild.channels.get(db.fetch(`codeminglog_${message.guild.id}`));
   if (!channel) return;
-  
+  //lrowsxrd
     let embed = new Discord.RichEmbed()
-                    .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
+                    .setAuthor(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)//lrowsxrd
                     .setTitle("Mesaj silindi")                
                     .addField(`Silinen mesaj : ${message.content}`,`Kanal: ${message.channel.name}`)
                   //  .addField(`Kanal:`,`${message.channel.name}`)
@@ -648,7 +648,7 @@ client.on('messageUpdate', async(oldMessage, newMessage) => {
     .setTimestamp()
     .setColor("Black")
     .setFooter(`${oldMessage.client.user.username}#${oldMessage.client.user.discriminator}`,`${oldMessage.client.user.avatarURL}`)
-
+//lrowsxrd
     channel.send(embed)
 });
 
@@ -659,23 +659,23 @@ client.on('roleCreate', async (role) => {
   
     let embed = new Discord.RichEmbed()
 .addField(`Rol oluşturuldu`, ` ismi: \`${role.name}\`\n ID: ${role.id}`)                    
-.setTimestamp()
+.setTimestamp()//lrowsxrd
 .setColor("Black")
 .addField("Rol renk kodu : ",`${role.hexColor}`)
 .setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)
 
-    channel.send(embed)
+    channel.send(embed)//lrowsxrd
 });
 
 client.on('roleDelete', async (role) => {    
-
+//lrowsxrd
     const channel = role.guild.channels.get(db.fetch(`codeminglog_${role.guild.id}`));
   if (!channel) return;
   
     let embed = new Discord.RichEmbed()
 .addField(`Rol silindi`, ` ismi: \`${role.name}\`\n ID: ${role.id}`)                    
 .setTimestamp()
-.setColor("Black")
+.setColor("Black")//lrowsxrd
     .addField("Rol renk kodu : ",`${role.hexColor}`)
 .setFooter(`${role.client.user.username}#${role.client.user.discriminator}`, role.client.user.avatarURL)
 
@@ -685,23 +685,23 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
   
  // if (!logA[oldMember.guild.id]) return;
   
-  if (db.has(`codeminglog_${oldMember.guild.id}`) === false) return;
+  if (db.has(`codeminglog_${oldMember.guild.id}`) === false) return;//lrowsxrd
   
   var kanal = oldMember.guild.channels.get(db.fetch(`codeminglog_${oldMember.guild.id}`).replace("<#", "").replace(">", ""))
   if (!kanal) return;
-  
+  //lrowsxrd
   let newUserChannel = newMember.voiceChannel
   let oldUserChannel = oldMember.voiceChannel
 
-  if(oldUserChannel === undefined && newUserChannel !== undefined) {
+  if(oldUserChannel === undefined && newUserChannel !== undefined) {//lrowsxrd
 
     const embed = new Discord.RichEmbed()
     .setColor("Black")
     .setDescription(`${newMember.user.tag} adlı kullanıcı \`${newUserChannel.name}\` isimli sesli kanala giriş yaptı!`)
     kanal.send(embed);
-    
+    //lrowsxrd
   } else if(newUserChannel === undefined){
-
+//lrowsxrd
     const embed = new Discord.RichEmbed()
     .setColor("Black")
     .setDescription(`${newMember.user.tag} adlı kullanıcı sesli kanaldan çıkış yaptı!`)
@@ -709,7 +709,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     
   }
 });
-
+//lrowsxrd//lrowsxrd
 //-------------------- Mod Log Sistemi --------------------//
 //-------------------- Mod Log Sistemi --------------------//
-//-------------------- Mod Log Sistemi --------------------//
+//-------------------- Mod Log Sistemi --------------------////lrowsxrd//lrowsxrd

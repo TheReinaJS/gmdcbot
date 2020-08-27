@@ -47,7 +47,7 @@ let lrowsxrd = new Discord.MessageEmbed()
 
 message.channel.send(lrowsxrd);
 };
-
+//lrowsxrd
 exports.conf = {
   enabled: true, 
   guildOnly: false, 
