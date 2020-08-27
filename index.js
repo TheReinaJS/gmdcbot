@@ -400,7 +400,7 @@ client.on("message", async message => {
         if (uyarisayisi === null) {
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("Kinsta Reklam-Engel!")
+            .setTitle("lrowsxrd Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İlk Uyarın! (1/3)`
             )
@@ -411,7 +411,7 @@ client.on("message", async message => {
         if (uyarisayisi === 1) {
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("Kinsta Reklam-Engel!")
+            .setTitle("lrowsxrd Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İkinci Uyarın! (2/3)`
             )
@@ -426,7 +426,7 @@ client.on("message", async message => {
           });
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("Kinsta Reklam-Engel!")
+            .setTitle("lrowsxrd Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yaptığı İçin Sunucudan Atıldı! (3/3)`
             )
@@ -437,12 +437,12 @@ client.on("message", async message => {
         if (uyarisayisi === 3) {
           message.delete();
           await kullanici.ban({
-            reason: `Kinsta Reklam-Engel Sistemi!`
+            reason: `lrowsxrd Reklam-Engel Sistemi!`
           });
           db.delete(`reklamuyari_${message.author.id}`);
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("Kinsta Reklam Kick Sistemi")
+            .setTitle("lrowsxrd Reklam Kick Sistemi")
             .setDescription(
               `<@${message.author.id}> Atıldıktan Sonra Tekrar Reklam Yaptığı İçin Sunucudan Yasaklandı!`
             )

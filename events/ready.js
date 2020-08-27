@@ -1,12 +1,18 @@
-const chalk = require('chalk')
-const moment = require('moment')
-const kanal = '742043139430285454'
-const log = message => {
-  
-    console.log(`${chalk.magenta(moment().format('YYYY-MM h:mm:ss'))} ${message}`)
-}
+const chalk = require('chalk');
+const moment = require('moment');
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+var prefix = ayarlar.prefix;
+//lrowsxrd
+module.exports = client => {
+ setInterval(function() {
+}, 8000);
+client.user.setPresence({
+        game: {
+            name: `lrowsxrd Moderasyon Altyapı`,
+            type: 'WATCHING'   //WATCHING - İZLİYOR LISTINING - DİNLİYOR
+        },
+        status: 'online'   //online - Çevrimiçi idle - Boşta
+});
 
-module.exports = async client => {
-    client.user.setPresence({activity:{name:`-yardım`},status: 'online'})
-    log(chalk.green(`[ BOT ] KOMUTLAR YÜKLENDI KULLANIMA HAZIR `))
-  }
+}

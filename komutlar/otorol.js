@@ -48,6 +48,6 @@ exports.conf = {
 
 exports.help = {
   name: 'otorol',
-  description: 'Kinda Code & Only V12.',
+  description: 'lrows v12',
   usage: 'otorol'
 };

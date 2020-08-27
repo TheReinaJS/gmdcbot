@@ -129,6 +129,6 @@ exports.conf = {
 
 exports.help = {
   name: "slowmode",
-  description: "Kinda Code & Only V12",
+  description: "lrowsxrd v12",
   usage: "slowmode"
 };

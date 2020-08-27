@@ -32,6 +32,6 @@ exports.conf = {
  
 exports.help = {
   name: 'afk',
-  description: 'Kinda Code & Only V12',
+  description: 'afk komutu',
   usage: 'afk'
 };

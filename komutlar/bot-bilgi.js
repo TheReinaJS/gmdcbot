@@ -11,8 +11,8 @@ exports.run = async (bot, message, args) => {
    
   .setColor('BLACK')
   .setFooter('Bot İsmi', bot.user.avatarURL)
-  .addField("» **Botun Sahibi**", "<@733616760116215868>")
-  .addField("» **Geliştirici** ","<@733616760116215868>")
+  .addField("» **Botun Sahibi**", "<@201016292885397504>")
+  .addField("» **Geliştirici** ","<@201016292885397504>")
   .addField("» **Bellek kullanımı**", (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + ' MB', true)  
   .addField("» **Çalışma süresi**", seksizaman)
   .addField("» **Kullanıcılar**" , bot.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)
@@ -21,8 +21,8 @@ exports.run = async (bot, message, args) => {
   .addField("» **CPU**", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
   .addField("» **Bit**", `\`${os.arch()}\``, true)
   .addField("» **İşletim Sistemi**", `\`\`${os.platform()}\`\``) 
-  .addField("**» Bot Davet**", " [Davet Et](https://discord.com/oauth2/authorize?client_id=744137158004047882&scope=bot&permissions=8)", )
-  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/Zv9C4ep)", )
+  .addField("**» Bot Davet**", " [Davet Et](https://discord.com/oauth2/authorize?client_id=731157771956781157&scope=bot&permissions=8)", )
+  .addField("**» Destek Sunucusu**", " [Sunucumuza Katıl](https://discord.gg/kgAWUG6)", )
    
  return message.channel.send(istatistikler);
   };
@@ -36,6 +36,6 @@ exports.conf = {
 
 exports.help = {
   name: "istatistik",
-  description: "Kinda Code & Only V12",
+  description: "bot bilgilerini vermektedir.",
   usage: "istatistik"
 };

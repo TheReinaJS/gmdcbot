@@ -28,7 +28,7 @@ exports.conf = {
 
 exports.help = {
 	name: 'reklam-taraması',
-	description: 'Kinda Code & Only V12.',
+	description: 'lrowsv12',
 	usage: 'reklam-taraması',
  
 }

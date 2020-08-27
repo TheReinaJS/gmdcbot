@@ -50,6 +50,6 @@ exports.conf = {
 
 exports.help = {
   name: 'everhereengel',
-  description: 'Kinda Code & Only V12',
+  description: 'ever-here engel sistemi',
   usage: 'everhereengel'
 };

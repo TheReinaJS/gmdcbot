@@ -49,6 +49,6 @@ exports.conf = {
 
 exports.help = {
     name: 'mod-log',
-    description: 'Kinda Code & Only V12.',
+    description: 'lrowsv12',
     usage: 'mod-log'
 };

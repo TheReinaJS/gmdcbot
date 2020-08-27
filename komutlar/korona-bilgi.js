@@ -6,12 +6,12 @@ exports.run = async (client, message, args) => {
   
 if(!args[0]) {
 
-let kinsta1 = new Discord.MessageEmbed() 
+let lrowsxrd1 = new Discord.MessageEmbed() 
   
 .setDescription(`Güncel Covid-19 İstatistiklerini Burdan Görebilirsin. Ülkeye Özel İstatistikler İçin ;\n\n **${ayarlar.prefix}korona <ülke kodu>** Komutunu Kullanabilirsin.`)
 .setColor('RED')
 
-message.channel.send(kinsta1);
+message.channel.send(lrowsxrd);
 }
 
 let darkcode = args[0].toLowerCase()
@@ -28,7 +28,7 @@ let text = await snekfetch.get(`https://thevirustracker.com/free-api?countryTota
 const body = text.body;
 let ülk = body.countrydata[0].info.title
 
-let kinsta = new Discord.MessageEmbed()
+let lrowsxrd = new Discord.MessageEmbed()
 
 .setColor('')
 
@@ -45,7 +45,7 @@ let kinsta = new Discord.MessageEmbed()
 .addField('*:bangbang: Ciddi Vakalar :*',`**〘 ${body.countrydata[0].total_serious_cases} 〙** `, false)
 .addField('*:flag_white:  Ülke :*',`**〘 ${ülk} 〙**`, false)
 
-message.channel.send(kinsta);
+message.channel.send(lrowsxrd);
 };
 
 exports.conf = {
@@ -57,6 +57,6 @@ exports.conf = {
 
 exports.help = {
   name: 'korona',
-  description: 'Kinsta Code & Only V12',
+  description: 'lrowsxrd v12',
   usage: 'korona'
 };

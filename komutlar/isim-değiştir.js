@@ -22,6 +22,6 @@ exports.conf = {
 }
 exports.help = {
   name: 'isim-değiştir',
-  usage: 'Kinsta Code & Only V12',
+  usage: 'v12 isim değiştir',
   description: 'isim-değiştir'
 }

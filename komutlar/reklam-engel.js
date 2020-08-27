@@ -61,6 +61,6 @@ exports.conf = {
 
 exports.help = {
   name: "reklam-engel",
-  description: "Kinda Code & Only V12.",
+  description: "lrows v12",
   usage: "reklam-engel"
 };
