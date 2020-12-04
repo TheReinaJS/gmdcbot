@@ -319,9 +319,9 @@ client.on("message", async message => {
 
     const afk = new Discord.MessageEmbed()
 
-      .setColor("RED")//lrowsxrd
+      .setColor("ORANGE")//lrowsxrd
       .setDescription(
-        `**BU KULLANICI AFK**\n\n**Afk Olan Kullanıcı :** \`${USER.tag}\`\n**Afk Süresi :** \`${timeObj.hours}saat\` \`${timeObj.minutes}dakika\` \`${timeObj.seconds}saniye\`\n**Sebep :** \`${REASON}\``
+        `<a:afkk:779391897486884954> **BU KULLANICI AFK**\n\n<a:sag:775385830872973312> **Afk Olan Kullanıcı :** \`${USER.tag}\`\n<a:sag:775385830872973312> **Afk Süresi :** \`${timeObj.hours}saat\` \`${timeObj.minutes}dakika\` \`${timeObj.seconds}saniye\`\n<a:sag:775385830872973312> **Sebep :** \`${REASON}\``
       );
 
     message.channel.send(afk);
