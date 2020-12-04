@@ -449,6 +449,26 @@ client.on("message", async message => {
 //-------------------- Reklam Engel Sistemi --------------------//
 //-------------------- Reklam Engel Sistemi --------------------//
 
+//-------------------- Botu Sese Sokma --------------------//
+//-------------------- Botu Sese Sokma --------------------//
+//-------------------- Botu Sese Sokma --------------------//
+
+client.login(ayarlar.token);
+
+client.on("ready", () => {
+  client.channels.cache.get("784422035027394571").join(); //sesli bi kanala katılacagı icin kanal ID si
+});
+
+//-------------------- Botu Sese Sokma --------------------//
+//-------------------- Botu Sese Sokma --------------------//
+//-------------------- Botu Sese Sokma --------------------//
+
+client.on('message', msg => {
+  if (msg.content === '<@!760559151930671146>') {
+    msg.channel.send(`> <@!${msg.author.id}> Prefixim burada --> **${ayarlar.prefix}** <---  Yakında Ayarlanabilir Gelecektir!`)
+  }
+})
+
 //-------------------- Prefix Sistemi --------------------//
 //-------------------- Prefix Sistemi --------------------//
 //-------------------- Prefix Sistemi --------------------//
