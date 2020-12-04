@@ -464,8 +464,8 @@ client.on("ready", () => {
 //-------------------- Botu Sese Sokma --------------------//
 
 client.on('message', msg => {
-  if (msg.content === '<@!760559151930671146>') {
-    msg.channel.send(`> <@!${msg.author.id}> Prefixim burada --> **${ayarlar.prefix}** <---  Yakında Ayarlanabilir Gelecektir!`)
+  if (msg.content === '<@!784394716883583007>') {
+    msg.channel.send(`> <@!${msg.author.id}> **Prefixim burada --> ${ayarlar.prefix} <---** <a:syhyldz:781845953946583070>`)
   }
 })
 
