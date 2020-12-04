@@ -7,7 +7,7 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setThumbnail("https://cdn.discordapp.com/attachments/784405293139623967/784476446009589800/780535841630060554.gif")
 .setDescription(`
-▬▬▬▬▬▬[ :closed_lock_with_key: **Yrnex Creative・YouTube Yardım Menüsü** :closed_lock_with_key: ]▬▬▬▬▬▬
+▬▬▬▬▬[ :closed_lock_with_key: **Yardım Menüsü** :closed_lock_with_key: ]▬▬▬▬▬
 
 > **» +aduketçek :** Etiketlediğiniz kişiye aduket çekersiniz.
 > **» +sa-as :** Bot sa yazdığınızda cevap verir.
@@ -28,7 +28,7 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
 > **» +botbilgi :** Botun Bilgilerini Öğrenirsiniz.
 > **» +ever-here-engel :** Bot sunucunuzda ever-here atılmasını engeller.
 > **» +slowmode :** Bot komutu kullandığınız kanalda yavaş mod uygular.`)
-.setImage('https://media.discordapp.net/attachments/767428424251211796/769168676841848862/standard_1.gif')
+.setImage('https://media.discordapp.net/attachments/781872196654071819/784490263925489695/standard_8.gif')
 
 
  
