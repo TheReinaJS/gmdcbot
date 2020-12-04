@@ -5,33 +5,33 @@ exports.run = (client, message) => {
 const EmbedFwhyCode = new Discord.MessageEmbed()
 
 .setColor("RANDOM")
-.setTitle("**▬▬▬▬▬▬[** ©️ **Daemon** ©️ **]▬▬▬▬▬▬**  \n\n> :floppy_disk: `d!token` **Botun tokenini görürsünüz.** \n> :floppy_disk: **Şuanda kullanılan prefix** `d!`")
-.setThumbnail("https://cdn.discordapp.com/attachments/655459488236568597/655887650494087178/loading_1.gif")
+.setTitle("**▬▬▬▬▬▬[** ©️ **Daemon** ©️ **]▬▬▬▬▬▬**  \n\n> :floppy_disk: `+token` **Botun tokenini görürsünüz.** \n> :floppy_disk: **Şuanda kullanılan prefix** `+`")
+.setThumbnail("https://cdn.discordapp.com/attachments/784405293139623967/784476446009589800/780535841630060554.gif")
 .setDescription(`
 
 ▬▬▬▬▬▬[ :closed_lock_with_key: **Daemon Yardım Menüsü** :closed_lock_with_key: ]▬▬▬▬▬▬
 
-> **» d!aduketçek :** Etiketlediğiniz kişiye aduket çekersiniz.
-> **» d!sa-as :** Bot sa yazdığınızda cevap verir.
-> **» d!reklam-engel :** Bot sunucunuzda reklam yapılmasını engeller.
-> **» d!küfür-engel :** Bot sunucunuzda küfür edilmesini engeller.
-> **» d!oylama  :** Bot bu komut ile sunucunuzda oylama başlatır.
-> **» d!kullanıcı-bilgim :** Bot kullanıcı bilginizi gösterir.
-> **» d!reklam-taraması :** Bot oynuyor kısmında reklam olan kişilileri belirler.
-> **» d!kanal-kilit :** Bot komutu kullandığınız kanalı kilitler.
-> **» d!kilit-aç :** Bot komutu kullandığınız kanalı kilitini açar.
-> **» d!kaçcm :** Bot malafat uzunluğunuzu söyler.
-> **» d!kralol :** Kral olmanıza yarar.
-> **» d!sil :** Bot belirttiğiniz miktarda mesaj siler.
-> **» d!av :** Bot avatarınızı veya etiketlediğiniz kişininkini gösterir.
-> **» d!afk :** Bot afk olduğunuzu belirtir.
-> **» d!öp :** Etiketlediğiniz kişiyi öpmenize yarar.
-> **» d!ever-here-engel :** Bot sunucunuzda ever-here atılmasını engeller.
-> **» d!yavaş-mod :** Bot komutu kullandığınız kanalda yavaş mod uygular.
-> **» d!fal :** Bot falınıza bakar.
-> **» d!token :** Botun tokenini görürsünüz.
-> **» d!prefix :** Bot belirlediğiniz prefix ile çalışır NOT:(Yardım Sekmesi Değişmez).
-> **» d!davet :** Bot davet linklerini gösterir.
+> **» +aduketçek :** Etiketlediğiniz kişiye aduket çekersiniz.
+> **» +sa-as :** Bot sa yazdığınızda cevap verir.
+> **» +reklam-engel :** Bot sunucunuzda reklam yapılmasını engeller.
+> **» +küfür-engel :** Bot sunucunuzda küfür edilmesini engeller.
+> **» +oylama  :** Bot bu komut ile sunucunuzda oylama başlatır.
+> **» +kullanıcı-bilgim :** Bot kullanıcı bilginizi gösterir.
+> **» +reklam-taraması :** Bot oynuyor kısmında reklam olan kişilileri belirler.
+> **» +kanal-kilit :** Bot komutu kullandığınız kanalı kilitler.
+> **» +kilit-aç :** Bot komutu kullandığınız kanalı kilitini açar.
+> **» +kaçcm :** Bot malafat uzunluğunuzu söyler.
+> **» +kralol :** Kral olmanıza yarar.
+> **» +sil :** Bot belirttiğiniz miktarda mesaj siler.
+> **» +av :** Bot avatarınızı veya etiketlediğiniz kişininkini gösterir.
+> **» +afk :** Bot afk olduğunuzu belirtir.
+> **» +öp :** Etiketlediğiniz kişiyi öpmenize yarar.
+> **» +ever-here-engel :** Bot sunucunuzda ever-here atılmasını engeller.
+> **» +yavaş-mod :** Bot komutu kullandığınız kanalda yavaş mod uygular.
+> **» +fal :** Bot falınıza bakar.
+> **» +token :** Botun tokenini görürsünüz.
+> **» +prefix :** Bot belirlediğiniz prefix ile çalışır NOT:(Yardım Sekmesi Değişmez).
+> **» +davet :** Bot davet linklerini gösterir.
 
 **▬▬▬▬▬▬▬[** :gear: **Bilgilendirme** :gear: **]▬▬▬▬▬▬▬**
 
