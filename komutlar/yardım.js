@@ -36,13 +36,10 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
 **▬▬▬▬▬▬▬[** :gear: **Bilgilendirme** :gear: **]▬▬▬▬▬▬▬**
 
 > :dizzy: **Fikirleriniz** **değerlidir, Belirtmekten asla çekinmeyin!**
-> :open_file_folder: **Botun Destek Sunucusuna Gelmek İçin [Tıkla!](https://discord.gg/57JYtHmJAN)**
-> :round_pushpin: **Komut hakkında detaylı bilgi için: d!yardım**
-> :airplane: **Aktif discord.js sürümüm: v12.2.0**
+> :round_pushpin: **Botun Gecikme Süresini Öğrenmek İçin +ping**
+> :airplane: **Aktif discord.js sürümüm: v12.2.0**`)
 
-**» Bağlantılar** 
-**[Destek Sunucusu](https://discord.gg/57JYtHmJAN)** **•** **[Botun Davet Linki](https://discord.com/oauth2/authorize?client_id=778974442335240212&scope=bot&permissions=805314622)** **•** **[Uptime Botumuzun Web Sitesi](https://daemon-uptime.glitch.me/)**
-`)
+
  
 .setFooter(client.user.username + "", client.user.avatarURL)
 .setTimestamp();
