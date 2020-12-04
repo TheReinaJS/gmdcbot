@@ -152,7 +152,7 @@ client.on("message", async msg => {
     ];
     if (kufur.some(word => msg.content.includes(word))) {
       try {
-        if (!msg.member.hasPermission("BAN_MEMBERS")) {
+        if (!msg.member.hasPermission("ADMINISTRATOR")) {
           msg.delete();
 
           const kinda = new Discord.MessageEmbed()

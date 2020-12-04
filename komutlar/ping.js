@@ -6,7 +6,7 @@ exports.run = async (app, message, client) => {
   const kinda = new Discord.MessageEmbed()
   //lrowsxrd
   .setColor("RED")
-  .setDescription('Ping Hesaplanıyor...')
+  .setDescription(':shield: **Ping Hesaplanıyor...**')
   
    let start = Date.now(); 
    let mesaj = await message.channel.send(kinda)
@@ -17,7 +17,7 @@ exports.run = async (app, message, client) => {
      //lrowsxrd   
    const only = new Discord.MessageEmbed()
    //lrowsxrd
-   .setDescription(`\nMesaj Gecikme Süresi ; **${diff}Ms** \n\nBot Gecikme Süresi ; **${API}Ms**`)
+   .setDescription(`\n<a:yr_discord:778983146993483776> Mesaj Gecikme Süresi ; **${diff}Ms** \n\n<a:yr_bulut:778983142169116672> Bot Gecikme Süresi ; **${API}Ms**`)
    .setColor('GREEN')
    //lrowsxrd
     mesaj.edit(only);
