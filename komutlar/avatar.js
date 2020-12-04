@@ -1,27 +1,16 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 
-exports.run = function(client, message, args) {
-  
-const codework = message.mentions.users.first()
-let user;
-if (message.mentions.users.first())  {user = message.mentions.users.first();}
-  
-else {user = message.author;}
-  //lrowsxrd
-return message.channel.send(new Discord.MessageEmbed()
-                            
-.setDescription(`**${user.tag}** Avatarın ;`)
-.setImage(user.avatarURL()))
+exports.run = async (client, message, args) => {
+let user = message.mentions.users.first() || message.author;
+message.channel.send(new Discord.MessageAttachment(user.avatarURL({dynamic: true})));
 };
-
 exports.conf = {
-enabled: false,
-guildOnly: false,
-aliases: ["pp"],
-permLevel: 0
-  
-};
-  
+  enabled: true,
+  guildOnly: true,
+  aliases: ['avatar'],
+  permLevel: 0
+}
+
 exports.help = {
-name: 'avatar'
+  name: 'av'
 };

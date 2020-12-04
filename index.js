@@ -152,7 +152,7 @@ client.on("message", async msg => {
     ];
     if (kufur.some(word => msg.content.includes(word))) {
       try {
-        if (!msg.member.hasPermission("ADMINISTRATOR")) {
+        if (!msg.member.hasPermission("BAN_MEMBERS")) {
           msg.delete();
 
           const kinda = new Discord.MessageEmbed()
@@ -336,28 +336,15 @@ client.on("message", async message => {
 //-------------------- Sa As Sistemi --------------------//
 //-------------------- Sa As Sistemi --------------------//
 
-client.on("message", async message => {
-  const Bdgo = message.content.toLocaleLowerCase();
+client.on('message', async message => {
+  if(message.channel.type !== 'text') return;
+if(message.content.toLocaleLowerCase() === 'sa') {
 
-  if (
-    Bdgo === "selam" ||
-    Bdgo === "sa" ||
-    Bdgo === "selamün aleyküm" ||
-    Bdgo === "selamun aleyküm" ||
-    Bdgo === "slm" ||
-    Bdgo === "sea"
-  ) {
-    let e = await db.fetch(`sa-as_${message.guild.id}`);
-    if (e === "acik") {
-      const embed = new Discord.RichEmbed()
-      
-     .setDescription(`Aleyküm Selam, Hoş Geldin ^-^`)
-     .setColor("GREEN")
-      
-    return message.channel.send(embed)
-    }
-  }
-});
+const selamlar = await (`selams.${message.guild.id}`);
+if(!selamlar) return;
+
+return message.channel.send(new Discord.MessageEmbed().setDescription(`${message.author} **ve Aleyküm Selam , Hoş Geldin!**`));
+}});
 
 //-------------------- Sa As Sistemi --------------------//
 //-------------------- Sa As Sistemi --------------------////lrowsxrd
@@ -372,7 +359,7 @@ client.on("message", async message => {
   let reklamkick = await db.fetch(`kufur_${message.guild.id}`);
   let kullanici = message.member;
   if (!reklamkick) return;
-  if (reklamkick == "Açık") {
+  if (reklamkick == "Kapalı") {
     const reklam = [
       "discord.app",
       "discord.gg",
@@ -403,7 +390,7 @@ client.on("message", async message => {
         if (uyarisayisi === null) {
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")//lrowsxrd
-            .setTitle("lrowsxrd Reklam-Engel!")
+            .setTitle("Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İlk Uyarın! (1/3)`
             )
@@ -414,7 +401,7 @@ client.on("message", async message => {
         if (uyarisayisi === 1) {
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("lrowsxrd Reklam-Engel!")
+            .setTitle("Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yapmayı Kes! Bu İkinci Uyarın! (2/3)`
             )
@@ -429,7 +416,7 @@ client.on("message", async message => {
           });
           let uyari = new Discord.RichEmbed()
             .setColor("BLACK")
-            .setTitle("lrowsxrd Reklam-Engel!")
+            .setTitle("Reklam-Engel!")
             .setDescription(
               `<@${message.author.id}> Reklam Yaptığı İçin Sunucudan Atıldı! (3/3)`
             )
@@ -445,7 +432,7 @@ client.on("message", async message => {
           db.delete(`reklamuyari_${message.author.id}`);
           let uyari = new Discord.RichEmbed()//lrowsxrd
             .setColor("BLACK")
-            .setTitle("lrowsxrd Reklam Kick Sistemi")
+            .setTitle("Reklam Kick Sistemi")
             .setDescription(
               `<@${message.author.id}> Atıldıktan Sonra Tekrar Reklam Yaptığı İçin Sunucudan Yasaklandı!`
             )

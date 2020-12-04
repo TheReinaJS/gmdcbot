@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
     
   const kinda = new Discord.MessageEmbed() 
   
-  .setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **${prefix}ever-here-engel aç/kapat**')
+  .setDescription('Hatalı Kullanım! Örnek: **+ever-here-engel aç & kapat**')
   .setColor("RED")
 
   return message.channel.send(kinda)
