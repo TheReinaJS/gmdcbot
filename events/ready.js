@@ -9,7 +9,7 @@ module.exports = client => {
 }, 8000);
 client.user.setPresence({
         game: {
-            name: `lrowsxrd Moderasyon Altyapı`,
+            name: `Öhöm`,
             type: 'WATCHING'   //WATCHING - İZLİYOR LISTINING - DİNLİYOR
         },
         status: 'online'   //online - Çevrimiçi idle - Boşta
