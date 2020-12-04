@@ -157,7 +157,7 @@ client.on("message", async msg => {
 
           const kinda = new Discord.MessageEmbed()
 
-            .setDescription("Bu Sunucuda Küfür Edemezsin.")
+            .setDescription("<a:ccoldog:779396203229347840> **Bu Sunucuda Küfür Edemezsin.**")
             .setColor("BLACK");
 
           return msg.reply(kinda);
@@ -210,7 +210,7 @@ client.on("messageUpdate", msg => {
 
           const kinda = new Discord.MessageEmbed()
 
-            .setDescription("Bu Sunucuda Küfür Edemezsin.")
+            .setDescription("<a:ccoldog:779396203229347840> **Bu Sunucuda Küfür Edemezsin.**")
             .setColor("BLACK");
 
           return msg.reply(kinda);
@@ -343,7 +343,7 @@ if(message.content.toLocaleLowerCase() === 'sa') {
 const selamlar = await (`selams.${message.guild.id}`);
 if(!selamlar) return;
 
-return message.channel.send(new Discord.MessageEmbed().setDescription(`${message.author} **ve Aleyküm Selam , Hoş Geldin!**`));
+return message.channel.send(new Discord.MessageEmbed().setDescription(`<a:siyahkalp:784418219746263040> ${message.author} **ve Aleyküm Selam , Hoş Geldin!**`));
 }});
 
 //-------------------- Sa As Sistemi --------------------//
@@ -427,7 +427,7 @@ client.on("message", async message => {
         if (uyarisayisi === 3) {
           message.delete();
           await kullanici.ban({
-            reason: `lrowsxrd Reklam-Engel Sistemi!`
+            reason: `Reklam-Engel Sistemi!`
           });
           db.delete(`reklamuyari_${message.author.id}`);
           let uyari = new Discord.RichEmbed()//lrowsxrd

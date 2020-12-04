@@ -32,7 +32,7 @@ return message.channel.send(kinda)
   //lrowsxrd
 const kinda = new Discord.MessageEmbed() 
   
-.setDescription('Lütfen **aç** Veya **kapat** Yazın. Örnek Kullanım : **${prefix}küfür-engel aç/kapat**')
+.setDescription('Hatalı Kullanım! Örnek: **+küfür-engel aç & kapat**')
 .setColor("RED")
 //lrowsxrd
 return message.channel.send(kinda)
