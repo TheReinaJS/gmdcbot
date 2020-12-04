@@ -15,7 +15,7 @@ exports.run = (client, message, args) => {
   if (!question) return message.channel.send(new Discord.MessageEmbed().setTitle(`Yazı Yazmayı Unuttun Yaw`)).then(m => m.delete(({ timeout: 5000})));
 
   message.channel.send(new Discord.MessageEmbed()
-        .setColor("007bff")
+        .setColor("5a0a83")
         .setThumbnail(client.user.avatarURL())
         .setTimestamp()
         .setFooter("Daemon", client.user.avatarURL())
