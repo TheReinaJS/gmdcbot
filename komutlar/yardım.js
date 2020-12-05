@@ -7,7 +7,7 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
 .setColor("RANDOM")
 .setThumbnail("https://cdn.discordapp.com/attachments/784405293139623967/784476446009589800/780535841630060554.gif")
 .setDescription(`
-▬▬▬▬▬[ :closed_lock_with_key: **Yardım Menüsü** :closed_lock_with_key: ]▬▬▬▬▬
+▬▬▬▬▬「 :closed_lock_with_key: **Yardım Menüsü** :closed_lock_with_key: 」▬▬▬▬▬
 
 > **» +aduketçek :** Etiketlediğiniz kişiye aduket çekersiniz.
 > **» +sa-as :** Bot sa yazdığınızda cevap verir.
