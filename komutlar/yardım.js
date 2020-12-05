@@ -27,6 +27,9 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
 > **» +şut-çek :** Şut Çekersiniz İşte a.q.
 > **» +botbilgi :** Botun Bilgilerini Öğrenirsiniz.
 > **» +ever-here-engel :** Bot sunucunuzda ever-here atılmasını engeller.
+> **» +fbi :** Fbi Gelir Dikkatli Ol.
+> **» +korkut :** Bot Sizi Korkutur.
+> **» +yılbaşı :** Yıl Başına Ne Kadar Kaldığını Söyler.
 > **» +slowmode :** Bot komutu kullandığınız kanalda yavaş mod uygular.`)
 .setImage('https://media.discordapp.net/attachments/781872196654071819/784490263925489695/standard_8.gif')
 
