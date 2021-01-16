@@ -1,0 +1,1 @@
+Bu altyapı Sharpen Creative e Aittir İzinsiz Paylaşılması yasaktır iletişim için sharpen#0001

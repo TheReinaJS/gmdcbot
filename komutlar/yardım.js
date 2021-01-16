@@ -10,27 +10,7 @@ const EmbedFwhyCode = new Discord.MessageEmbed()
 ▬▬▬▬▬「 :closed_lock_with_key: **Yardım Menüsü** :closed_lock_with_key: 」▬▬▬▬▬
 
 > **» +aduketçek :** Etiketlediğiniz kişiye aduket çekersiniz.
-> **» +sa-as :** Bot sa yazdığınızda cevap verir.
-> **» +reklam-engel :** Bot sunucunuzda reklam yapılmasını engeller.
-> **» +küfür-engel :** Bot sunucunuzda küfür edilmesini engeller.
-> **» +oylama  :** Bot bu komut ile sunucunuzda oylama başlatır.
-> **» +kullanıcı-bilgim :** Bot kullanıcı bilginizi gösterir.
-> **» +reklam-taraması :** Bot oynuyor kısmında reklam olan kişilileri belirler.
-> **» +kanal-kilit :** Bot komutu kullandığınız kanalı kilitler.
-> **» +kilit-aç :** Bot komutu kullandığınız kanalı kilitini açar.
-> **» +sor :** Bota Soru Sorarsınız.
-> **» +yetkilerim:** Yetkilerinizi Görürsünüz.
-> **» +sil :** Bot belirttiğiniz miktarda mesaj siler.
-> **» +av :** Bot avatarınızı veya etiketlediğiniz kişininkini gösterir.
-> **» +afk :** Bot afk olduğunuzu belirtir.
-> **» +ping :** Botun Gecikme Süresini Görürsünüz.
-> **» +şut-çek :** Şut Çekersiniz İşte a.q.
-> **» +botbilgi :** Botun Bilgilerini Öğrenirsiniz.
-> **» +ever-here-engel :** Bot sunucunuzda ever-here atılmasını engeller.
-> **» +fbi :** Fbi Gelir Dikkatli Ol.
-> **» +korkut :** Bot Sizi Korkutur.
-> **» +yılbaşı :** Yıl Başına Ne Kadar Kaldığını Söyler.
-> **» +slowmode :** Bot komutu kullandığınız kanalda yavaş mod uygular.`)
+ **» +slowmode :** Bot komutu kullandığınız kanalda yavaş mod uygular.`)
 .setImage('https://media.discordapp.net/attachments/781872196654071819/784490263925489695/standard_8.gif')
 
 
