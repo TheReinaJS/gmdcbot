@@ -1,9 +1,9 @@
-let database = require("quick.db")
+let database = require("quick.db")//sharpen
 let ayarlar = require("../ayarlar.json")
 
 
 
-exports.run = async(client, message) => {
+exports.run = async(client, message) => {//sharpen
   if(!message.member.permissions.has('ADMINISTRATOR')) return message.reply('Bu komutu kullanmak için yetkin yetersiz')
   
   let rol = message.mentions.roles.first()
@@ -17,7 +17,7 @@ exports.run = async(client, message) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['abone-rol'],
+  aliases: ['abone-rol'],//sharpen
   perm: 0
 }
 exports.help = {

@@ -1,5 +1,5 @@
 let database = require("quick.db")
-let ayarlar = require("../ayarlar.json")
+let ayarlar = require("../ayarlar.json")//sharpen
 
 
 
@@ -9,7 +9,7 @@ exports.run = async(client, message) => {
   let rol = message.mentions.roles.first()
   if(!rol) return message.channel.send(`Abone Sorumlusu Rolünü Etiketleyerek Tekrar Dener Misin?`)
   
-  
+  //sharpen
   database.set(`abonesorumlusu.${message.guild.id}`, rol.id)
   message.channel.send(`Abone Sorumlusunu ${rol} Olarak Ayarladım!`)
 }
@@ -17,7 +17,7 @@ exports.run = async(client, message) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['abone-sorumlusu'],
+  aliases: ['abone-sorumlusu'],//sharpen
   perm: 0
 }
 exports.help = {
@@ -25,7 +25,7 @@ exports.help = {
 }
 
 exports.play = {
-  kullanım: 'abone-sorumlusu @rol',
+  kullanım: 'abone-sorumlusu @rol',//sharpen
   açıklama: 'Abone Sorumlusu Rolünü Ayarlarsınız',
   kategori: 'Abone'
 }

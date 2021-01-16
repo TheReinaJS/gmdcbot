@@ -1,12 +1,12 @@
-let Discord = require("discord.js")
+let Discord = require("discord.js")//sharpen
 let database = require("quick.db")
 let ayarlar = require("../ayarlar.json")
 
 
 
-exports.run = async(client, message, args) => {
+exports.run = async(client, message, args) => {//sharpen
 let abonesorumlusu = await database.fetch(`abonesorumlusu.${message.guild.id}`)
-let abonemesaj = await database.fetch(`abonemesaj.${message.guild.id}`)
+let abonemesaj = await database.fetch(`abonemesaj.${message.guild.id}`)//sharpen
 let abonerol = await database.fetch(`abonerol.${message.guild.id}`)
   let abonekisi = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
 if(!abonerol) return message.channel.send(`${message.author} Verilecek Abone Rolü Ayarlı Değil!`).then(msg => msg.delete(100))
@@ -29,13 +29,13 @@ if(!abonerol) return message.channel.send(`${message.author} Verilecek Abone Rol
          .setImage("https://cdn.discordapp.com/attachments/799591806068981790/799913490940166174/youtube.gif")
   message.guild.channels.cache.get(abonemesaj).send(embed).then(msg => msg.delete(100))
   
-}
+}//sharpen
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['abone'],
-  perm: 0
+  perm: 0 //sharpen
 }
 exports.help = {
   name: 'abone'
@@ -46,3 +46,4 @@ exports.play = {
   açıklama: 'Etiketlenen Üyeye Abone Rolü Verirsiniz.',
   kategori: 'Abone'
 }
+//sharpen//sharpen//sharpen

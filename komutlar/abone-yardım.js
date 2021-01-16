@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const ayarlar = require('../ayarlar.json');
 
 var prefix = ayarlar.prefix
-
+//sharpen
 module.exports.run = async(client, message, args) => {
  
  let sayfalar = [`
@@ -19,7 +19,7 @@ module.exports.run = async(client, message, args) => {
   let page = 1; 
  
   const embed = new Discord.MessageEmbed()
-    .setTitle("Abone Rol Bot Youtube Komutları") 
+    .setTitle("Abone Rol Bot Youtube Komutları") //sharpen
     .setTitle("Abone Rol Bot Youtube Komutları") 
     .setColor("#501c67")
     .setFooter(`Sayfa ${page} - ${sayfalar.length}`) 
@@ -37,7 +37,7 @@ module.exports.run = async(client, message, args) => {
      
       const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 }); 
       const forwards = msg.createReactionCollector(forwardsFilter, { time: 60000 }); 
-     
+     //sharpen//sharpen//sharpen
       
       backwards.on('collect', r => { 
         if (page === 1) return; 
@@ -49,7 +49,7 @@ module.exports.run = async(client, message, args) => {
         embed.setTimestamp()
         embed.setImage('https://cdn.discordapp.com/attachments/798513335439065098/799910916937744384/standard_1.gif')
         msg.edit(embed) 
-      })
+      })//sharpen
      
       forwards.on('collect', r => { 
         if (page === sayfalar.length) return; 
@@ -63,7 +63,7 @@ module.exports.run = async(client, message, args) => {
         msg.edit(embed) 
       })
    
-    })
+    })//sharpen
  
   })
  
