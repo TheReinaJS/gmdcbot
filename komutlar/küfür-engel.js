@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
   if (args[0] === "aç") {
     db.set(`${message.guild.id}.motion`, true);
     message.channel.send(
-      "Motion Bot | **Küfür Engel Sistemi Başarılı Şekilde** `Aktif` **Edildi.** **Bot ban yetkisi Olanların Mesajını Silmeyecektir.**"
+      "SharpenBot | **Küfür Engel Sistemi Başarılı Şekilde** `Aktif` **Edildi.** **Bot ban yetkisi Olanların Mesajını Silmeyecektir.**"
     );
     return;
   }          
