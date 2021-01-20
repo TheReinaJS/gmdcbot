@@ -115,7 +115,7 @@ client.elevation = message => {
 
 client.login(ayarlar.token);//sharpen creative
 
-
+////////////////////////////////////////////Reklam Engel////////////////////////////////////////////
 client.on("message", msg => {
  if(!db.has(`reklam_${msg.guild.id}`)) return;
         const reklam = [".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", "net", ".rf.gd", ".az", ".party", "discord.gg",];
@@ -134,3 +134,14 @@ client.on("message", msg => {
           }
         }
     });
+//////////////////////Sa-as//////////////////////
+
+client.on('message', async (msg, member, guild) => {
+  let i = await  db.fetch(`saas_${msg.guild.id}`)
+      if(i === 'açık') {
+        if (msg.content.toLowerCase() === 'sa') {
+        msg.reply('Aleyküm Selam Hoşgeldin');      
+      } 
+      }
+    });
+//////////////////////Sa-as//////////////////////
