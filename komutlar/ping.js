@@ -1,17 +1,18 @@
 const Discord = require("discord.js");
 exports.run = async (client, message, args) => {
 
-const fwhy = new Discord.MessageEmbed()
+const gamerwolf = new Discord.MessageEmbed()
 
-.addField(`Pingim` ,`${client.ws.ping}`)
+.setColor('#7289DA')
+.setDescription(`<:841392996469309472:844249729020854292> Pingim ・ ${client.ws.ping}`)
   
-return message.channel.send(fwhy)
+return message.channel.send(gamerwolf)
   
   
 }
   
 exports.conf = {
-  enabled: true,  //pinkcode //sharpen
+  enabled: true,  
   guildOnly: false,
   aliases: [],
   permLevel: 0
@@ -19,6 +20,5 @@ exports.conf = {
 
 exports.help = {
   name: 'ping',
-  description: 'Sade Ping Komutu işde mq',
   usage: 'ping'
 }; 

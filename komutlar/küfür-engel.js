@@ -16,14 +16,14 @@ exports.run = async (client, message, args) => {
     );
     return;
   }
-  message.channel.send(            //pinkcode
+  message.channel.send(            
     "Sharpen |  **Lütfen** `aç` **yada** `kapat` **Yazın!**"
   );
 };
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["küfürengel", "küfür-engel", "küfür"],     //pinkcode
+  aliases: ["küfürengel", "küfür-engel", "küfür"],     
   permLevel: 0
 };
 
@@ -33,4 +33,3 @@ exports.help = {
   usage: ""
 };
 
-//pinkcode  //sharpen  
