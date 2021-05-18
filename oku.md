@@ -1,3 +1,6 @@
-Altyapı Sharpen Creative e Aittir !
+**GamerWolf ・ V12 Moderasyon Botu AltYapısı**
 
-Kodları Aldığım Sunucular : https://discord.gg/tN88zggeCY  & https://discord.gg/Z6A7b3MYfK & https://discord.gg/pinkcode
+Altyapı Sharpen'a Aittir. Ve Gerekli Tüm İzinler Alınmıştır.
+
+Tüm Hakları Saklıdır.
+

@@ -12,14 +12,16 @@ exports.run = async (bot, message, args) => {
  let GamerWolf = new Discord.MessageEmbed()
  .setColor('#7289DA')
  .setDescription('<:841392996469309472:844249729020854292> **Reklam Engel Sistemi Başarıyla Açıldı.**')
- message.channel.send(GamerWolf)  }
+ message.channel.send(GamerWolf)
+  }
   if (args[0] == 'kapat') {
         if(!db.has(`reklam_${message.guild.id}`)) return message.channel.send(`Sistem zaten kapalı.`)
     db.delete(`reklam_${message.guild.id}`)
  let GamerWolf2 = new Discord.MessageEmbed()
  .setColor('#7289DA')
  .setDescription('<:841392996469309472:844249729020854292> **Reklam Engel Sistemi Başarıyla Kapatıldı.**')
- message.channel.send(GamerWolf2)    }
+ message.channel.send(GamerWolf2)
+  }
  
 };
  

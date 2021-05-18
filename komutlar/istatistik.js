@@ -7,10 +7,10 @@ exports.run = async (client, message, args) => {
     .duration(client.uptime)
     .format(" D [gün], H [saat], m [dakika], s [saniye]");
   const istatistikler = new Discord.MessageEmbed()
-    .setColor("RANDOM")
+    .setColor("#7289DA")
     .setTimestamp()
     .setFooter("© 2020 ro-BOT", client.user.avatarURL())
-    .addField("» **Botun Sahibi**", "<@786854151102529537>")
+    .addField("» **Botun Sahibi**", "<@619461914623475712>")
     .addField("» **Gecikme süreleri**","Mesaj Gecikmesi: {ping1} ms \nBot Gecikmesi: {ping2} ms"
         .replace("{ping1}", new Date().getTime() - message.createdTimestamp)
         .replace("{ping2}", client.ws.ping),true)

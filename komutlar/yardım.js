@@ -15,8 +15,6 @@ const mhelp = new Discord.MessageEmbed()
 
 <:841036156098969641:844213748222394389> \`!sil\` **・ Belirli Bir Kanaldaki Mesajları Siler.**
 
-<:841036156098969641:844213748222394389> \`!kick\` **・ Sunucudan Bir Üye Kickler.**
-
 <:841036156098969641:844213748222394389> \`!yavaş-mod\` **・ Sohbete Yazma Sınır (Süre) Ekler.**
 
 <:841036156098969641:844213748222394389> \`!istatistik\` **・ Bot Hakkında Bilgi Verir.**

@@ -4,20 +4,22 @@ const db = require("quick.db");
 exports.run = async (client, message, args) => {
   if (args[0] === "aç") {
     db.set(`${message.guild.id}.motion`, true);
-    message.channel.send(
-      "SharpenBot | **Küfür Engel Sistemi Başarılı Şekilde** `Aktif` **Edildi.** **Bot ban yetkisi Olanların Mesajını Silmeyecektir.**"
-    );
+ let GamerWolf = new Discord.MessageEmbed()
+ .setColor('#7289DA')
+ .setDescription('<:841392996469309472:844249729020854292> **Küfür Engel Sistemi Başarıyla Açıldı.**');
+ message.channel.send(GamerWolf)
     return;
   }          
   if (args[0] === "kapat") {
     db.delete(`${message.guild.id}.motion`);     
-    message.channel.send(
-      "Sharpen Bot | **Başarılı Şekilde** `Devre Dışı` **Edildi.**"
-    );
+ let GamerWolf2 = new Discord.MessageEmbed()
+ .setColor('#7289DA')
+ .setDescription('<:841392996469309472:844249729020854292> **Küfür Engel Sistemi Başarıyla Kapatıldı.**');
+ message.channel.send(GamerWolf2)
     return;
   }
   message.channel.send(            
-    "Sharpen |  **Lütfen** `aç` **yada** `kapat` **Yazın!**"
+    "<:841392996469309472:844249729020854292> **Doğru Kullanımı ・ \`!reklam-engelle aç & kapat\`**"
   );
 };
 exports.conf = {
