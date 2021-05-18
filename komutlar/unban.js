@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 exports.run = async (client, message, args) => {
-    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(new MessageEmbed().setDescription(`:x: Yetkin yeterli değil!`))
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(new MessageEmbed().setDescription(`<:841392996469309472:844249729020854292> **Malesef Yeterli Yetkiniz Bulunmamakta.**`))
     let user = args[0];
     const banList = await message.guild.fetchBans();
     if (!user || isNaN(user) || !banList.has(user)) {

@@ -1,16 +1,17 @@
 const Discord = require('discord.js');
 exports.run = async (client, message, args) => {
-    if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('Yeterli Yetkin Yok :x:')
+    if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('<:841392996469309472:844249729020854292> **Malesef Yeterli Yetkiniz Bulunmamakta.**')
   let kullanıcı = message.mentions.users.first()
-  if (!kullanıcı) return message.channel.send(':x: Kullanıcıyı etiketlemeyi unuttun kanka.')
+  if (!kullanıcı) return message.channel.send('<:841392996469309472:844249729020854292> **Lütfen Bir Kullanıcı Etiketleyiniz.**')
   let sebep = args.slice(1).join(" ")
-if(!sebep) return message.channel.send(`:x: Sebep belirtmeyi unuttun kanka.`)
+if(!sebep) return message.channel.send(`<:841392996469309472:844249729020854292> **Lütfen Bir Sebep Belirtiniz.**`)
  // let rol = message.mentions.roles.first()
   let member = message.guild.member(kullanıcı)
    member.ban(member)                        //sharpen
    let embed = new Discord.MessageEmbed()
-  .setAuthor(`${member.user.tag} Sunucudan yasaklandı.`,member.user.avatarURL())
-   .setDescription(`**Sebep:** ${sebep}`)
+   .setColor('#7289DA')
+  .setTitle(`${member.user.tag} Sunucudan Yasaklandı.`,member.user.avatarURL())
+   .setDescription(`**<:841392996469309472:844249729020854292> Sebep ・ ** ${sebep}`)
    message.channel.send(embed)
 }
 exports.conf = {

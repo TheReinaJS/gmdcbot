@@ -3,26 +3,23 @@ exports.run = (Bot, Mesaj, Argüman) => {
   const Sayı = Number(Argüman[0]);
 
   const Hata = new MessageEmbed()
-    .setColor("#7f0000")
-    .setTitle("Hata!")
-    .setFooter(`${Mesaj.author.username} Tarafından İstendi.`,Mesaj.author.avatarURL);
+    .setColor("#7289DA")
 
   const Başarılı = new MessageEmbed()
-    .setColor("#007f00")
-    .setTitle("Başarılı!")
-    .setFooter(`${Mesaj.author.username} Tarafından İstendi.`,Mesaj.author.avatarURL);
+    .setColor("#7289DA")
   {
     if (!Mesaj.member.hasPermission("MANAGE_MESSAGES")) {
-      Hata.setDescription("Bu komutu kullanmak için `Mesajları Yönet` yetkisine sahip olmanız gerekmektedir.");
+      Hata.setColor("#7289DA")
+      Hata.setDescription("<:841392996469309472:844249729020854292> **Malesef Yeterli Yetkiniz Bulunmamakta.**");
       Mesaj.channel.send(Hata).then(msg => msg.delete(5000));
       
     } else {
       if (!Sayı) {
-        Hata.setDescription("Bir sayı belirtiniz.");
+        Hata.setDescription("<:841392996469309472:844249729020854292> **Bir Sayı Belirtiniz.**");
         Mesaj.channel.send(Hata).then(msg => msg.delete(5000));
       } else {
         if (Sayı < 101) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla ${Sayı} Adet Mesaj Başarıyla Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(5000));
           Mesaj.channel.bulkDelete(Sayı);
         }
