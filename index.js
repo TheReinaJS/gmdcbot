@@ -147,7 +147,7 @@ client.on('message', async (msg, member, guild) => {
 
 client.on("message", msg => {
  if(!db.has(`${msg.guild.id}.motion`)) return;
-        const kufur = ["",];
+        const kufur = ["salak","slk","mal","aptal","kahpe"];
         if (kufur.some(word => msg.content.includes(word))) {
           try {
             if (!msg.member.hasPermission("BAN_MEMBERS")) {
