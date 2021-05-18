@@ -3,8 +3,8 @@ const Discord = require('discord.js')
 
 exports.run = async (bot, message, args) => {
   
-  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send(':no_entry: Bu komudu kullanabilmek için `Sunucuyu Yönet` yetkisine sahip olmalısın!')
-  if (!args[0]) return message.channel.send(' Sa-as yazısını açmak için; `!sa-as aç veya kapat`')
+  if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('<:841392996469309472:844249729020854292> **Malesef Yeterli Yetkiniz Bulunmamakta.**')
+  if (!args[0]) return message.channel.send('<:841392996469309472:844249729020854292> **Doğru Kullanımı ・ \`!sa-as aç & kapat\`**')
   
   if (args[0] == 'aç') {
     db.set(`saas_${message.guild.id}`, 'açık')
