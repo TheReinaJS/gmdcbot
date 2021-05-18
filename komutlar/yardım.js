@@ -26,7 +26,7 @@ const mhelp = new Discord.MessageEmbed()
 <:841036156098969641:844213748222394389> \`!nuke\` **・ Kanala Nuke Atarsın.**
 
 `)  
-  .setImage(`https://geekflare.com/wp-content/uploads/2021/02/discord-bot-hosting-1200x385.jpg`)
+  .setImage(`https://cdn.discordapp.com/attachments/834351722373185546/844219044814913546/Adsz.png`)
 .setThumbnail(client.user.avatarURL)
 message.channel.send(mhelp)
 .then; const sembed = new Discord.MessageEmbed()
