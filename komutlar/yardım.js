@@ -5,14 +5,27 @@ const lembed = new Discord.MessageEmbed()
 
 .then;   
 const mhelp = new Discord.MessageEmbed()
-.setAuthor(`GamerWolf Yardım Menüsü`, client.user.avatarURL())
+.setAuthor(`Wolf Test Yardım Menüsü`, client.user.avatarURL())
 .setColor('#7289DA')
-.setDescription(`<:a_:821738957997211659>  Lord Creative botumuzu eklemek için \`davet\` yazabilirsiniz.
+.setDescription(`<:841393053151264829:844213718622404656>  **Wolf Test Botumuzu Eklemek İçin \`davet\` Yazabilirsiniz.**
 
+<:841036156098969641:844213748222394389> \`!ban\` **・ Sunucudan Bir Üyeyi Yasaklar.**
 
+<:841036156098969641:844213748222394389> \`!unban\` **・ İstediğiniz Kişinin Banını Kaldırır.**
+
+<:841036156098969641:844213748222394389> \`!sil\` **・ Belirli Bir Kanaldaki Mesajları Siler.**
+
+<:841036156098969641:844213748222394389> \`!kick\` **・ Sunucudan Bir Üye Kickler.**
+
+<:841036156098969641:844213748222394389> \`!yavaş-mod\` **・ Sohbete Yazma Sınır (Süre) Ekler.**
+
+<:841036156098969641:844213748222394389> \`!istatistik\` **・ Bot Hakkında Bilgi Verir.**
+
+<:841036156098969641:844213748222394389> \`!reklam-engelle\` **・ Reklam Engel Açıp Kapatırsın.**
+
+<:841036156098969641:844213748222394389> \`!nuke\` **・ Kanala Nuke Atarsın.**
 
 `)  
-.addField(`__Bilgilendirme__`,`<:a_:821738957997211659>  \`davet\` | Lord Creative'yi Sunucunuza Davet Edersiniz\n<:a_:821738957997211659>  \`!botbilgi\` | Botun İstatistiklerini Gösterir \n <:a_:821738957997211659>  \`ayarlar\` | Sunucunuzdaki Açık veya Kapalı Komutları Gösterir`)
   .setImage(`https://geekflare.com/wp-content/uploads/2021/02/discord-bot-hosting-1200x385.jpg`)
 .setThumbnail(client.user.avatarURL)
 message.channel.send(mhelp)
