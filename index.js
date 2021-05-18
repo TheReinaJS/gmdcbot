@@ -113,7 +113,7 @@ client.elevation = message => {
   return permlvl;
 };
 
-client.login(ayarlar.token);//sharpen creative
+client.login(process.env.token);//sharpen creative
 
 ////////////////////////////////////////////Reklam Engel////////////////////////////////////////////
 client.on("message", msg => {
