@@ -123,10 +123,8 @@ client.on("message", msg => {
           try {
             if (!msg.member.hasPermission("BAN_MEMBERS")) {
                   msg.delete();
-                    return msg.reply('**Bu Sunucuda** `Reklam Engelle`** Aktif Reklam Yapmana İzin Vermem İzin Vermem ? !**').then(msg => msg.delete(3000));
-   
- 
-  msg.delete(3000);                        //sharpen codare      
+                    return msg.reply('**<:mavi_okey:844254276179722242> Bu Sunucuda Reklam Yapmak Yasak.**').then(msg => msg.delete(3000));
+      
  
             }              
           } catch(err) {
@@ -140,8 +138,26 @@ client.on('message', async (msg, member, guild) => {
   let i = await  db.fetch(`saas_${msg.guild.id}`)
       if(i === 'açık') {
         if (msg.content.toLowerCase() === 'sa') {
-        msg.reply('Aleyküm Selam Hoşgeldin');      
+        msg.reply('<a:__:844213764115136522> **Aleyküm Selam Hoşgeldin.**');      
       } 
       }
     });
 //////////////////////Sa-as//////////////////////
+
+
+client.on("message", msg => {
+ if(!db.has(`${msg.guild.id}.motion`)) return;
+        const kufur = ["",];
+        if (kufur.some(word => msg.content.includes(word))) {
+          try {
+            if (!msg.member.hasPermission("BAN_MEMBERS")) {
+                  msg.delete();
+                    return msg.reply('**<:mavi_okey:844254276179722242> Bu Sunucuda Küfür Etmek Yasak.**').then(msg => msg.delete(3000));
+      
+ 
+            }              
+          } catch(err) {
+            console.log(err);
+          }
+        }
+    });
