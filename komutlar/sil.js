@@ -19,25 +19,25 @@ exports.run = (Bot, Mesaj, Argüman) => {
         Mesaj.channel.send(Hata).then(msg => msg.delete(5000));
       } else {
         if (Sayı < 101) {
-          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla ${Sayı} Adet Mesaj Başarıyla Silindi.`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(5000));
           Mesaj.channel.bulkDelete(Sayı);
         }
         if (Sayı > 100 && Sayı < 200) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(5000));
           Mesaj.channel.bulkDelete(100).then(() => {
             Mesaj.channel.bulkDelete(Sayı - 100);
           });
         }
         if (Sayı == 200) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(5000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 200 && Sayı < 300) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(5000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100).then(() => {
@@ -45,14 +45,14 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 300) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(5000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 300 && Sayı < 400) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(6000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -61,7 +61,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 400) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(7000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -69,7 +69,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 400 && Sayı < 500) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(7000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -79,7 +79,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 500) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(8000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -88,7 +88,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 500 && Sayı < 600) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(8000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -99,7 +99,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 600) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(10000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -109,7 +109,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 600 && Sayı < 700) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(10000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -121,7 +121,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 700) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(12000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -132,7 +132,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 700 && Sayı < 800) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(10000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -145,7 +145,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 800) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(12000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -157,7 +157,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 800 && Sayı < 900) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(11000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -171,7 +171,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           });
         }
         if (Sayı == 900) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(12000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -184,7 +184,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 900 && Sayı < 1000) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(12000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -200,7 +200,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
         }
 
         if (Sayı == 1000) {
-          Başarılı.setDescription(`${Sayı} adet mesaj başarıyla silindi!`);
+          Başarılı.setDescription(`<:mavi_okey:844254276179722242> Başarıyla **${Sayı}** Adet Mesaj Silindi.`);
           Mesaj.channel.send(Başarılı).then(msg => msg.delete(13000));
           Mesaj.channel.bulkDelete(100);
           Mesaj.channel.bulkDelete(100);
@@ -214,7 +214,7 @@ exports.run = (Bot, Mesaj, Argüman) => {
           Mesaj.channel.bulkDelete(100);
         }
         if (Sayı > 1000) {
-          Hata.setDescription("En fazla 1000 adet mesaj silebilirsiniz.");
+          Hata.setDescription("<:841392996469309472:844249729020854292> **En fazla 1000 Adet Mesaj Silebilirsiniz.**");
           Mesaj.channel.send(Hata).then(msg => msg.delete(5000));
         }
       }

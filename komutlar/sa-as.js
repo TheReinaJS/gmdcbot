@@ -8,13 +8,17 @@ exports.run = async (bot, message, args) => {
   
   if (args[0] == 'aç') {
     db.set(`saas_${message.guild.id}`, 'açık')
-      message.channel.send(`✔Başarıyla botun \`Aleyküm selam\` yazmasını açtınız., Artık bot \`sa\` yazıldığında cevap verecek.`)
-    
+ let GamerWolf = new Discord.MessageEmbed()
+ .setColor('#7289DA')
+ .setDescription('<:841392996469309472:844249729020854292> **Sa-As Sistemi Başarıyla Açıldı.**')
+ message.channel.send(GamerWolf)
   }
   if (args[0] == 'kapat') {
     db.set(`saas_${message.guild.id}`, 'kapali')
-      message.channel.send(`✔ Başarıyla \`Aleyküm selam\` yazmasını kapattınız, Artık bot \`sa\` yazıldığında cevap vermeyecek.`)
-    
+ let GamerWolf2 = new Discord.MessageEmbed()
+ .setColor('#7289DA')
+ .setDescription('<:841392996469309472:844249729020854292> **Sa-As Sistemi Başarıyla Kapatıldı.**')
+ message.channel.send(GamerWolf2)    
   }
 
 }
