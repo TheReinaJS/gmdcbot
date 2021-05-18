@@ -18,9 +18,9 @@ const limit = args[0] ? args[0] : 0;
             return
           }
 if (limit > 100) {
-    return message.channel.send(new wolfs.MessageEmbed().setDescription("Süre limiti maksimum **100** saniye olabilir.").setColor('RED'));
+    return message.channel.send(new wolfs.MessageEmbed().setDescription("<:841392996469309472:844249729020854292> Süre Limiti Maksimum **100** Saniye Olabilir.").setColor('#7289DA'));
 }  
-    message.channel.send(new wolfs.MessageEmbed().setDescription(`Yazma süre limiti **${limit}** saniye olarak ayarlanmıştır.`).setColor('GREEN')).then(m => m.delete({ timeout: 5000, reason: 'Siliniyor.' }));
+    message.channel.send(new wolfs.MessageEmbed().setDescription(`<:841392996469309472:844249729020854292> Yazma Süre Limiti **${limit}** Saniye Olarak Ayarlanmıştır.`).setColor('#7289DA')).then(m => m.delete({ timeout: 5000, reason: 'Siliniyor.' }));
   
 var request = require('request');
 request({

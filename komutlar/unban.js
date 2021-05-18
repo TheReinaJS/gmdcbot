@@ -5,10 +5,10 @@ exports.run = async (client, message, args) => {
     let user = args[0];
     const banList = await message.guild.fetchBans();
     if (!user || isNaN(user) || !banList.has(user)) {
-        return message.channel.send(new MessageEmbed().setDescription(`:x: Kullanıcı id hatalı veya kullanıcı yasaklı değil!`))
+        return message.channel.send(new MessageEmbed().setColor('#7289DA').setDescription(`<:841392996469309472:844249729020854292> **Kullanıcı ID'si Hatalı Veya Kullanıcı Sunucuda Yasaklı Değil.**`))
     }
     message.guild.members.unban(user);
-    message.channel.send(new MessageEmbed().setDescription(`:white_check_mark: Başarılı!`))
+    message.channel.send(new MessageEmbed().setColor('#7289DA').setDescription(`<:mavi_okey:844254276179722242> **İşlem Başarılı.**`))
 };
 
 exports.conf = {
