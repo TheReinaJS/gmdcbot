@@ -5,7 +5,7 @@ const lembed = new Discord.MessageEmbed()
 
 .then;   
 const mhelp = new Discord.MessageEmbed()
-.setAuthor(`Wolf Test Yardım Menüsü`, client.user.avatarURL())
+.setAuthor(`Wolf ・ Moderasyon Yardım Menüsü`, client.user.avatarURL())
 .setColor('#7289DA')
 .setDescription(`<:841393053151264829:844213718622404656>  **Wolf Test Botumuzu Eklemek İçin \`!davet\` Yazabilirsiniz.**
 
